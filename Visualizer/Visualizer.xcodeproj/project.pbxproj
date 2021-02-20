@@ -8,36 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		A9B7000025E0284E00176027 /* VisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */; };
-		A9B7000125E0284E00176027 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7FFED25E0284B00176027 /* ContentView.swift */; };
-		A9B7000225E0284E00176027 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7FFED25E0284B00176027 /* ContentView.swift */; };
 		A9B7000325E0284E00176027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B7FFEE25E0284E00176027 /* Assets.xcassets */; };
 		A9B7000425E0284E00176027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B7FFEE25E0284E00176027 /* Assets.xcassets */; };
 		A9B7001D25E0357200176027 /* MoodAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7001C25E0357200176027 /* MoodAnimation.swift */; };
 		A9B7001E25E0357200176027 /* MoodAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7001C25E0357200176027 /* MoodAnimation.swift */; };
-		A9B7002225E038C700176027 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7002125E038C700176027 /* GradientBackgroundView.swift */; };
-		A9B7002325E038C700176027 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7002125E038C700176027 /* GradientBackgroundView.swift */; };
-		A9B7002E25E0429100176027 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7002D25E0429100176027 /* TimerView.swift */; };
-		A9B7002F25E0429100176027 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7002D25E0429100176027 /* TimerView.swift */; };
-		A9B7003525E051C900176027 /* PolygonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7003425E051C900176027 /* PolygonShape.swift */; };
-		A9B7003625E051CA00176027 /* PolygonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7003425E051C900176027 /* PolygonShape.swift */; };
 		A9B7003D25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A9B7003C25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 */; };
 		A9B7003E25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A9B7003C25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 */; };
-		A9B7004D25E1691A00176027 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7004C25E1691A00176027 /* MeditationView.swift */; };
-		A9B7004E25E1691A00176027 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7004C25E1691A00176027 /* MeditationView.swift */; };
 		A9B7FFFF25E0284E00176027 /* VisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */; };
 		A9D3005325E1A6330086CE70 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3005225E1A6330086CE70 /* MainButton.swift */; };
 		A9D3005425E1A6330086CE70 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3005225E1A6330086CE70 /* MainButton.swift */; };
+		A9D3006525E1AD530086CE70 /* PolygonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006125E1AD520086CE70 /* PolygonShape.swift */; };
+		A9D3006625E1AD530086CE70 /* PolygonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006125E1AD520086CE70 /* PolygonShape.swift */; };
+		A9D3006725E1AD530086CE70 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006225E1AD520086CE70 /* GradientBackgroundView.swift */; };
+		A9D3006825E1AD530086CE70 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006225E1AD520086CE70 /* GradientBackgroundView.swift */; };
+		A9D3006925E1AD530086CE70 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006325E1AD520086CE70 /* MeditationView.swift */; };
+		A9D3006A25E1AD530086CE70 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006325E1AD520086CE70 /* MeditationView.swift */; };
+		A9D3006B25E1AD530086CE70 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006425E1AD520086CE70 /* TimerView.swift */; };
+		A9D3006C25E1AD530086CE70 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006425E1AD520086CE70 /* TimerView.swift */; };
+		A9D3007425E1AD750086CE70 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3007325E1AD740086CE70 /* RootView.swift */; };
+		A9D3007525E1AD750086CE70 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3007325E1AD740086CE70 /* RootView.swift */; };
+		A9D3007925E1AD870086CE70 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3007825E1AD870086CE70 /* MoodView.swift */; };
+		A9D3007A25E1AD870086CE70 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3007825E1AD870086CE70 /* MoodView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A9B7001C25E0357200176027 /* MoodAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodAnimation.swift; sourceTree = "<group>"; };
-		A9B7002125E038C700176027 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
-		A9B7002D25E0429100176027 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		A9B7003425E051C900176027 /* PolygonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShape.swift; sourceTree = "<group>"; };
 		A9B7003C25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_zapsplat_among_the_stars.mp3; sourceTree = "<group>"; };
-		A9B7004C25E1691A00176027 /* MeditationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerApp.swift; sourceTree = "<group>"; };
-		A9B7FFED25E0284B00176027 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9B7FFEE25E0284E00176027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9B7FFF325E0284E00176027 /* Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B7FFF625E0284E00176027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +42,12 @@
 		A9B7FFFD25E0284E00176027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9B7FFFE25E0284E00176027 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		A9D3005225E1A6330086CE70 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		A9D3006125E1AD520086CE70 /* PolygonShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PolygonShape.swift; path = MeditationView/PolygonShape.swift; sourceTree = "<group>"; };
+		A9D3006225E1AD520086CE70 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientBackgroundView.swift; path = MeditationView/GradientBackgroundView.swift; sourceTree = "<group>"; };
+		A9D3006325E1AD520086CE70 /* MeditationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeditationView.swift; path = MeditationView/MeditationView.swift; sourceTree = "<group>"; };
+		A9D3006425E1AD520086CE70 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerView.swift; path = MeditationView/TimerView.swift; sourceTree = "<group>"; };
+		A9D3007325E1AD740086CE70 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootView.swift; path = Views/RootView.swift; sourceTree = "<group>"; };
+		A9D3007825E1AD870086CE70 /* MoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoodView.swift; path = MoodView/MoodView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,11 +79,11 @@
 		A9B7001025E0303700176027 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A9B7004C25E1691A00176027 /* MeditationView.swift */,
-				A9B7FFED25E0284B00176027 /* ContentView.swift */,
-				A9B7002125E038C700176027 /* GradientBackgroundView.swift */,
-				A9B7002D25E0429100176027 /* TimerView.swift */,
-				A9B7003425E051C900176027 /* PolygonShape.swift */,
+				A9D3007825E1AD870086CE70 /* MoodView.swift */,
+				A9D3006225E1AD520086CE70 /* GradientBackgroundView.swift */,
+				A9D3006325E1AD520086CE70 /* MeditationView.swift */,
+				A9D3006125E1AD520086CE70 /* PolygonShape.swift */,
+				A9D3006425E1AD520086CE70 /* TimerView.swift */,
 				A9D3005225E1A6330086CE70 /* MainButton.swift */,
 			);
 			path = Views;
@@ -107,6 +110,7 @@
 		A9B7FFEB25E0284B00176027 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A9D3007325E1AD740086CE70 /* RootView.swift */,
 				A9B7003B25E12D3000176027 /* Resources */,
 				A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */,
 				A9B7001025E0303700176027 /* Views */,
@@ -241,14 +245,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9B7004D25E1691A00176027 /* MeditationView.swift in Sources */,
-				A9B7002E25E0429100176027 /* TimerView.swift in Sources */,
+				A9D3007425E1AD750086CE70 /* RootView.swift in Sources */,
+				A9D3006925E1AD530086CE70 /* MeditationView.swift in Sources */,
+				A9D3006525E1AD530086CE70 /* PolygonShape.swift in Sources */,
 				A9B7001D25E0357200176027 /* MoodAnimation.swift in Sources */,
-				A9B7000125E0284E00176027 /* ContentView.swift in Sources */,
+				A9D3006725E1AD530086CE70 /* GradientBackgroundView.swift in Sources */,
+				A9D3006B25E1AD530086CE70 /* TimerView.swift in Sources */,
 				A9D3005325E1A6330086CE70 /* MainButton.swift in Sources */,
-				A9B7003525E051C900176027 /* PolygonShape.swift in Sources */,
+				A9D3007925E1AD870086CE70 /* MoodView.swift in Sources */,
 				A9B7FFFF25E0284E00176027 /* VisualizerApp.swift in Sources */,
-				A9B7002225E038C700176027 /* GradientBackgroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,14 +261,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9B7004E25E1691A00176027 /* MeditationView.swift in Sources */,
-				A9B7002F25E0429100176027 /* TimerView.swift in Sources */,
+				A9D3007525E1AD750086CE70 /* RootView.swift in Sources */,
+				A9D3006A25E1AD530086CE70 /* MeditationView.swift in Sources */,
+				A9D3006625E1AD530086CE70 /* PolygonShape.swift in Sources */,
 				A9B7001E25E0357200176027 /* MoodAnimation.swift in Sources */,
-				A9B7000225E0284E00176027 /* ContentView.swift in Sources */,
+				A9D3006825E1AD530086CE70 /* GradientBackgroundView.swift in Sources */,
+				A9D3006C25E1AD530086CE70 /* TimerView.swift in Sources */,
 				A9D3005425E1A6330086CE70 /* MainButton.swift in Sources */,
-				A9B7003625E051CA00176027 /* PolygonShape.swift in Sources */,
+				A9D3007A25E1AD870086CE70 /* MoodView.swift in Sources */,
 				A9B7000025E0284E00176027 /* VisualizerApp.swift in Sources */,
-				A9B7002325E038C700176027 /* GradientBackgroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

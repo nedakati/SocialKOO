@@ -10,4 +10,5 @@ import Foundation
 enum Strings {
     static let howAreYouFeeling = "How are you \n feeling?"
     static let swipeUpAndDown = "Swipe up and down to select \n your mood."
+    static let imBetter = "I'm better"
 }

@@ -18,6 +18,8 @@ struct FeelingView: View {
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: gradientSecondLayer), startPoint: .top, endPoint: .bottom)
+                .opacity(self.isFirstLayer ? 0 : 1)
+                .animation(.spring())
 
             LinearGradient(gradient: Gradient(colors: gradientFirstLayer), startPoint: .top, endPoint: .bottom)
                 .opacity(self.isFirstLayer ? 1 : 0)
@@ -34,6 +36,7 @@ struct FeelingView: View {
                     imageSecondLayer
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .opacity(self.isFirstLayer ? 0 : 1)
                         .animation(.easeIn(duration: 0.33))
 
                     imageFirstLayer

@@ -32,4 +32,13 @@ extension Mood {
         case .sad: return [Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))]
         }
     }
+    
+    var speed: TimeInterval {
+        switch self {
+        case .happy: return 3
+        case .bored: return 4
+        case .depressed: return 5
+        case .sad: return 5
+        }
+    }
 }

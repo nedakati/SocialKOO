@@ -31,12 +31,12 @@ struct FeelingView: View {
                     .multilineTextAlignment(.center)
 
                 ZStack {
-                    imageFirstLayer
+                    imageSecondLayer
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .animation(.easeIn(duration: 0.33))
 
-                    imageSecondLayer
+                    imageFirstLayer
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .opacity(self.isFirstLayer ? 1 : 0)
@@ -71,9 +71,9 @@ struct FeelingView: View {
                     if newStateIndex != currentStateIndex {
                         withAnimation(.linear(duration: 1)) {
                             currentStateIndex = newStateIndex
+                            isFirstLayer.toggle()
                             setGradient(gradient: states[currentStateIndex].gradient)
                             setImage(image: Image(states[currentStateIndex].image))
-                            isFirstLayer.toggle()
                         }
                     }
                 }

@@ -12,19 +12,18 @@ struct Polygon: View {
     
     var width: CGFloat
     var height: CGFloat
-    
-    var mood: Mood
+    var speed: TimeInterval
     
     @State private var sides = 3
 
     private var timer = Timer.publish(every: 2, on: .main, in: .default).autoconnect()
 
-    init(width: CGFloat, height: CGFloat, mood: Mood) {
+    init(width: CGFloat, height: CGFloat, speed: TimeInterval) {
         self.width = width
         self.height = height
-        self.mood = mood
-        
-        timer = Timer.publish(every: mood.speed, on: .main, in: .default).autoconnect()
+        self.speed = speed
+
+        timer = Timer.publish(every: speed, on: .main, in: .default).autoconnect()
     }
     
     var body: some View {
@@ -33,7 +32,7 @@ struct Polygon: View {
             .cornerRadius(20)
             .opacity(0.3)
             .frame(width: width, height: height)
-            .animation(.easeInOut(duration: mood.speed))
+            .animation(.easeInOut(duration: speed))
             .animation(.easeIn)
             .onReceive(timer) { _ in
                 sides = Int.random(in: 5...15)
@@ -43,15 +42,17 @@ struct Polygon: View {
 
 struct MeditationView: View {
     
-    var mood: Mood
+    var mood: MoodAnimation
     
     @State private var scale: CGFloat = 1
     @State private var scalePolygon: CGFloat = 1
     @State private var offset = CGSize.zero
+    
+    @State private var speed: TimeInterval = 0
 
     private var audioPlayer: AVAudioPlayer?
     
-    init(mood: Mood) {
+    init(mood: MoodAnimation) {
         self.mood = mood
         if let path = Bundle.main.path(forResource: "music_zapsplat_among_the_stars", ofType: "mp3") {
             do {
@@ -70,7 +71,7 @@ struct MeditationView: View {
                 Spacer()
                 ZStack {
                     ForEach(1 ..< 10) { number in
-                        Polygon(width: CGFloat(50 * number), height: CGFloat(50 * number), mood: mood)
+                        Polygon(width: CGFloat(50 * number), height: CGFloat(50 * number), speed: speed)
                             .scaleEffect(scale)
                             .rotation3DEffect(.degrees(scale == 1 ? 180 : 45), axis: (x: 0, y: 0, z: 1))
                     }
@@ -97,21 +98,24 @@ struct MeditationView: View {
                         .foregroundColor(.white)
                         .fontWeight(.heavy)
                         .font(.largeTitle)
-                        .animation(.easeInOut(duration: mood.speed))
+                        .animation(.easeInOut(duration: mood.defaultSpeed))
                 } else {
                     Text("Breathe out")
                         .foregroundColor(.white)
                         .fontWeight(.heavy)
                         .font(.largeTitle)
-                        .animation(.easeInOut(duration: mood.speed))
+                        .animation(.easeInOut(duration: mood.defaultSpeed))
                 }
-                TimerView(targetMinutes: 5)
+                TimerView(animation: mood) {
+                    speed -= 0.5
+                    print(speed)
+                }
             }
         }
         .onAppear {
             playSound()
-
-            let animation = Animation.easeInOut(duration: mood.speed).repeatForever(autoreverses: true)
+            speed = mood.defaultSpeed
+            let animation = Animation.easeInOut(duration: speed).repeatForever(autoreverses: true)
             withAnimation(animation) {
                 scale = 0.5
             }
@@ -127,6 +131,6 @@ struct MeditationView: View {
 
 struct MeditationView_Previews: PreviewProvider {
     static var previews: some View {
-        MeditationView(mood: .sad)
+        MeditationView(mood: .mindDistraction)
     }
 }

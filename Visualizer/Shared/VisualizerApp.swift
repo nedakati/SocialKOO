@@ -11,7 +11,7 @@ import SwiftUI
 struct VisualizerApp: App {
     var body: some Scene {
         WindowGroup {
-            MeditationView(mood: .depressed)
+            RootView()
         }
     }
 }

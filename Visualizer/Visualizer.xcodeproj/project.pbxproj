@@ -8,12 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A9B7000025E0284E00176027 /* VisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */; };
-		A9B7000125E0284E00176027 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7FFED25E0284B00176027 /* ContentView.swift */; };
-		A9B7000225E0284E00176027 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7FFED25E0284B00176027 /* ContentView.swift */; };
 		A9B7000325E0284E00176027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B7FFEE25E0284E00176027 /* Assets.xcassets */; };
 		A9B7000425E0284E00176027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B7FFEE25E0284E00176027 /* Assets.xcassets */; };
-		A9B7001225E0308B00176027 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7001125E0308B00176027 /* MeditationView.swift */; };
-		A9B7001325E0308B00176027 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7001125E0308B00176027 /* MeditationView.swift */; };
 		A9B7001D25E0357200176027 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7001C25E0357200176027 /* Mood.swift */; };
 		A9B7001E25E0357200176027 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7001C25E0357200176027 /* Mood.swift */; };
 		A9B7002225E038C700176027 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7002125E038C700176027 /* GradientBackgroundView.swift */; };
@@ -25,23 +21,30 @@
 		A9B7003D25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A9B7003C25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 */; };
 		A9B7003E25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A9B7003C25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 */; };
 		A9B7FFFF25E0284E00176027 /* VisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */; };
+		C1042D2325E1688700EF63A2 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D2225E1688700EF63A2 /* MeditationView.swift */; };
+		C1042D2425E1688700EF63A2 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D2225E1688700EF63A2 /* MeditationView.swift */; };
+		C1042D2A25E169DD00EF63A2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D2925E169DD00EF63A2 /* RootView.swift */; };
+		C1042D2B25E169DD00EF63A2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D2925E169DD00EF63A2 /* RootView.swift */; };
+		C1042D3125E16A2E00EF63A2 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* MoodView.swift */; };
+		C1042D3225E16A2E00EF63A2 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* MoodView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A9B7001125E0308B00176027 /* MeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeditationView.swift; path = ../../../../MeditationView.swift; sourceTree = "<group>"; };
 		A9B7001C25E0357200176027 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		A9B7002125E038C700176027 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		A9B7002D25E0429100176027 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		A9B7003425E051C900176027 /* PolygonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonShape.swift; sourceTree = "<group>"; };
 		A9B7003C25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_zapsplat_among_the_stars.mp3; sourceTree = "<group>"; };
 		A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerApp.swift; sourceTree = "<group>"; };
-		A9B7FFED25E0284B00176027 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9B7FFEE25E0284E00176027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9B7FFF325E0284E00176027 /* Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B7FFF625E0284E00176027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9B7FFFB25E0284E00176027 /* Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B7FFFD25E0284E00176027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9B7FFFE25E0284E00176027 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		C1042D2225E1688700EF63A2 /* MeditationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
+		C1042D2925E169DD00EF63A2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		C1042D3025E16A2E00EF63A2 /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,11 +76,9 @@
 		A9B7001025E0303700176027 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A9B7FFED25E0284B00176027 /* ContentView.swift */,
-				A9B7001125E0308B00176027 /* MeditationView.swift */,
-				A9B7002125E038C700176027 /* GradientBackgroundView.swift */,
-				A9B7002D25E0429100176027 /* TimerView.swift */,
-				A9B7003425E051C900176027 /* PolygonShape.swift */,
+				C1042D2925E169DD00EF63A2 /* RootView.swift */,
+				C1042D2F25E16A1800EF63A2 /* MoodView */,
+				C1042D2E25E16A0D00EF63A2 /* MeditationView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -136,6 +137,25 @@
 				A9B7FFFE25E0284E00176027 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		C1042D2E25E16A0D00EF63A2 /* MeditationView */ = {
+			isa = PBXGroup;
+			children = (
+				C1042D2225E1688700EF63A2 /* MeditationView.swift */,
+				A9B7002125E038C700176027 /* GradientBackgroundView.swift */,
+				A9B7002D25E0429100176027 /* TimerView.swift */,
+				A9B7003425E051C900176027 /* PolygonShape.swift */,
+			);
+			path = MeditationView;
+			sourceTree = "<group>";
+		};
+		C1042D2F25E16A1800EF63A2 /* MoodView */ = {
+			isa = PBXGroup;
+			children = (
+				C1042D3025E16A2E00EF63A2 /* MoodView.swift */,
+			);
+			path = MoodView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,9 +259,10 @@
 			files = (
 				A9B7002E25E0429100176027 /* TimerView.swift in Sources */,
 				A9B7001D25E0357200176027 /* Mood.swift in Sources */,
-				A9B7000125E0284E00176027 /* ContentView.swift in Sources */,
+				C1042D2325E1688700EF63A2 /* MeditationView.swift in Sources */,
+				C1042D3125E16A2E00EF63A2 /* MoodView.swift in Sources */,
 				A9B7003525E051C900176027 /* PolygonShape.swift in Sources */,
-				A9B7001225E0308B00176027 /* MeditationView.swift in Sources */,
+				C1042D2A25E169DD00EF63A2 /* RootView.swift in Sources */,
 				A9B7FFFF25E0284E00176027 /* VisualizerApp.swift in Sources */,
 				A9B7002225E038C700176027 /* GradientBackgroundView.swift in Sources */,
 			);
@@ -253,9 +274,10 @@
 			files = (
 				A9B7002F25E0429100176027 /* TimerView.swift in Sources */,
 				A9B7001E25E0357200176027 /* Mood.swift in Sources */,
-				A9B7000225E0284E00176027 /* ContentView.swift in Sources */,
+				C1042D2425E1688700EF63A2 /* MeditationView.swift in Sources */,
+				C1042D3225E16A2E00EF63A2 /* MoodView.swift in Sources */,
 				A9B7003625E051CA00176027 /* PolygonShape.swift in Sources */,
-				A9B7001325E0308B00176027 /* MeditationView.swift in Sources */,
+				C1042D2B25E169DD00EF63A2 /* RootView.swift in Sources */,
 				A9B7000025E0284E00176027 /* VisualizerApp.swift in Sources */,
 				A9B7002325E038C700176027 /* GradientBackgroundView.swift in Sources */,
 			);

@@ -25,6 +25,8 @@
 		A9B7004D25E1691A00176027 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7004C25E1691A00176027 /* MeditationView.swift */; };
 		A9B7004E25E1691A00176027 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7004C25E1691A00176027 /* MeditationView.swift */; };
 		A9B7FFFF25E0284E00176027 /* VisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */; };
+		A9D3005325E1A6330086CE70 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3005225E1A6330086CE70 /* MainButton.swift */; };
+		A9D3005425E1A6330086CE70 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3005225E1A6330086CE70 /* MainButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,7 @@
 		A9B7FFFB25E0284E00176027 /* Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B7FFFD25E0284E00176027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9B7FFFE25E0284E00176027 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		A9D3005225E1A6330086CE70 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 				A9B7002125E038C700176027 /* GradientBackgroundView.swift */,
 				A9B7002D25E0429100176027 /* TimerView.swift */,
 				A9B7003425E051C900176027 /* PolygonShape.swift */,
+				A9D3005225E1A6330086CE70 /* MainButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +245,7 @@
 				A9B7002E25E0429100176027 /* TimerView.swift in Sources */,
 				A9B7001D25E0357200176027 /* MoodAnimation.swift in Sources */,
 				A9B7000125E0284E00176027 /* ContentView.swift in Sources */,
+				A9D3005325E1A6330086CE70 /* MainButton.swift in Sources */,
 				A9B7003525E051C900176027 /* PolygonShape.swift in Sources */,
 				A9B7FFFF25E0284E00176027 /* VisualizerApp.swift in Sources */,
 				A9B7002225E038C700176027 /* GradientBackgroundView.swift in Sources */,
@@ -255,6 +260,7 @@
 				A9B7002F25E0429100176027 /* TimerView.swift in Sources */,
 				A9B7001E25E0357200176027 /* MoodAnimation.swift in Sources */,
 				A9B7000225E0284E00176027 /* ContentView.swift in Sources */,
+				A9D3005425E1A6330086CE70 /* MainButton.swift in Sources */,
 				A9B7003625E051CA00176027 /* PolygonShape.swift in Sources */,
 				A9B7000025E0284E00176027 /* VisualizerApp.swift in Sources */,
 				A9B7002325E038C700176027 /* GradientBackgroundView.swift in Sources */,

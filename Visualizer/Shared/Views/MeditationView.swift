@@ -113,6 +113,9 @@ struct MeditationView: View {
                         .font(.largeTitle)
                         .animation(.easeInOut(duration: mood.defaultSpeed))
                 }
+                MainButton(title: "Tap me") {
+                    
+                }
             }
             Spacer()
         }

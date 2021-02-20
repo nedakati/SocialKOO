@@ -12,7 +12,7 @@ struct RootView: View {
 
     var body: some View {
         if isMeditationViewVisible {
-            MeditationView(mood: .depressed)
+            MeditationView(mood: .chillOut)
                 .transition(.opacity)
         } else {
             FeelingView()

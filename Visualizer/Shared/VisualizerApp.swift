@@ -11,7 +11,7 @@ import SwiftUI
 struct VisualizerApp: App {
     var body: some Scene {
         WindowGroup {
-            RootView()
+            MeditationView(mood: .chillOut)
         }
     }
 }

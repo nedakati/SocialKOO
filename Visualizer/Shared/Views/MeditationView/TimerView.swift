@@ -8,49 +8,39 @@
 import SwiftUI
 
 struct TimerView: View {
-    
-    var targetMinutes: Int
 
-    @State var timeRemaining: Int = 60
+    let animation: MoodAnimation
+    let changeSpeed: () -> Void
     
-    @State var minutes: Int = 0
-    @State var seconds: Int = 0
+    @State private var timeRemaining: Int = 0
+    @State private var minutes: Int = 0
+    @State private var seconds: Int = 0
     
     private let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
     var body: some View {
         VStack {
-            Spacer()
             Text("\(minutes):\(formarSeconds(seconds))")
                 .foregroundColor(.white)
                 .fontWeight(.heavy)
                 .font(.largeTitle)
                 .onReceive(timer) { _ in
-                    if timeRemaining > 0 {
-                        timeRemaining -= 1
-                        seconds -= 1
+                    timeRemaining += 1
+                    seconds += 1
                         
-                        if seconds == -1 {
-                            minutes -= 1
-                            seconds = 59
-                        }
+                    if seconds == 60 {
+                        minutes += 1
+                        seconds = 0
                     }
-                }
-                .onAppear {
-                    self.timeRemaining = targetMinutes * 60
-                    self.minutes = targetMinutes
+                    
+                    if timeRemaining % animation.timeToStartChaingingSpeed == 0 {
+                        changeSpeed()
+                    }
                 }
         }
     }
     
     private func formarSeconds(_ seconds: Int) -> String {
         return seconds < 10 ? "0\(seconds)" : "\(seconds)"
-    }
-
-}
-
-struct Timer_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerView(targetMinutes: 5)
     }
 }

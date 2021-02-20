@@ -20,7 +20,6 @@ struct TimerView: View {
     
     var body: some View {
         VStack {
-            Spacer()
             Text("\(minutes):\(formarSeconds(seconds))")
                 .foregroundColor(.white)
                 .fontWeight(.heavy)

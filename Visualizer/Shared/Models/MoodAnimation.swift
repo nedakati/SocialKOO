@@ -35,7 +35,7 @@ extension MoodAnimation {
     
     var defaultSpeed: TimeInterval { 5 }
     
-    var maxSpeed: TimeInterval {
+    var minMaxSpeed: TimeInterval {
         switch self {
         case .chillOut: return 3
         case .moodBoost: return 4

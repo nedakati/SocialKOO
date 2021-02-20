@@ -67,8 +67,14 @@ struct MeditationView: View {
         ZStack {
             GradientBackgroundView(colors: mood.gradients)
                 .ignoresSafeArea()
-            VStack {
-                Spacer()
+            VStack(alignment: .center) {
+                HStack {
+                    TimerView(animation: mood) {
+                        speed -= 0.5
+                    }
+                    Spacer()
+                }
+                .padding(EdgeInsets(top: 24, leading: 48, bottom: 24, trailing: 24))
                 ZStack {
                     ForEach(1 ..< 10) { number in
                         Polygon(width: CGFloat(50 * number), height: CGFloat(50 * number), speed: speed)
@@ -93,24 +99,22 @@ struct MeditationView: View {
                             }
                         }
                 )
-                if scale == 1 {
-                    Text("Breathe in")
-                        .foregroundColor(.white)
-                        .fontWeight(.heavy)
-                        .font(.largeTitle)
-                        .animation(.easeInOut(duration: mood.defaultSpeed))
-                } else {
-                    Text("Breathe out")
-                        .foregroundColor(.white)
-                        .fontWeight(.heavy)
-                        .font(.largeTitle)
-                        .animation(.easeInOut(duration: mood.defaultSpeed))
-                }
-                TimerView(animation: mood) {
-                    speed -= 0.5
-                    print(speed)
-                }
+                Spacer()
+//                if scale == 1 {
+//                    Text("Breathe in")
+//                        .foregroundColor(.white)
+//                        .fontWeight(.heavy)
+//                        .font(.largeTitle)
+//                        .animation(.easeInOut(duration: mood.defaultSpeed))
+//                } else {
+//                    Text("Breathe out")
+//                        .foregroundColor(.white)
+//                        .fontWeight(.heavy)
+//                        .font(.largeTitle)
+//                        .animation(.easeInOut(duration: mood.defaultSpeed))
+//                }
             }
+            Spacer()
         }
         .onAppear {
             playSound()

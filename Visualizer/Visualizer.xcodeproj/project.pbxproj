@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				C1042D8525E1B3DC00EF63A2 /* RootView.swift */,
-				C1042D2F25E16A1800EF63A2 /* MoodView */,
+				C1042D2F25E16A1800EF63A2 /* FeelingView */,
 				C1042D2E25E16A0D00EF63A2 /* MeditationView */,
 			);
 			path = Views;
@@ -156,12 +156,12 @@
 			path = MeditationView;
 			sourceTree = "<group>";
 		};
-		C1042D2F25E16A1800EF63A2 /* MoodView */ = {
+		C1042D2F25E16A1800EF63A2 /* FeelingView */ = {
 			isa = PBXGroup;
 			children = (
 				C1042D3025E16A2E00EF63A2 /* FeelingView.swift */,
 			);
-			path = MoodView;
+			path = FeelingView;
 			sourceTree = "<group>";
 		};
 		C1042D7125E1B33600EF63A2 /* Resources */ = {

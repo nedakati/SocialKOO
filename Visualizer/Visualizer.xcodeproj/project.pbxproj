@@ -25,8 +25,14 @@
 		C1042D2425E1688700EF63A2 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D2225E1688700EF63A2 /* MeditationView.swift */; };
 		C1042D2A25E169DD00EF63A2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D2925E169DD00EF63A2 /* RootView.swift */; };
 		C1042D2B25E169DD00EF63A2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D2925E169DD00EF63A2 /* RootView.swift */; };
-		C1042D3125E16A2E00EF63A2 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* MoodView.swift */; };
-		C1042D3225E16A2E00EF63A2 /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* MoodView.swift */; };
+		C1042D3125E16A2E00EF63A2 /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* FeelingView.swift */; };
+		C1042D3225E16A2E00EF63A2 /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* FeelingView.swift */; };
+		C1042D4225E19E9900EF63A2 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4125E19E9900EF63A2 /* Feeling.swift */; };
+		C1042D4325E19E9900EF63A2 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4125E19E9900EF63A2 /* Feeling.swift */; };
+		C1042D4725E19EE000EF63A2 /* Intends.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4625E19EE000EF63A2 /* Intends.swift */; };
+		C1042D4825E19EE000EF63A2 /* Intends.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4625E19EE000EF63A2 /* Intends.swift */; };
+		C1042D4C25E1AF6000EF63A2 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4B25E1AF6000EF63A2 /* Strings.swift */; };
+		C1042D4D25E1AF6000EF63A2 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4B25E1AF6000EF63A2 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +50,10 @@
 		A9B7FFFE25E0284E00176027 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		C1042D2225E1688700EF63A2 /* MeditationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		C1042D2925E169DD00EF63A2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		C1042D3025E16A2E00EF63A2 /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
+		C1042D3025E16A2E00EF63A2 /* FeelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingView.swift; sourceTree = "<group>"; };
+		C1042D4125E19E9900EF63A2 /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
+		C1042D4625E19EE000EF63A2 /* Intends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intends.swift; sourceTree = "<group>"; };
+		C1042D4B25E1AF6000EF63A2 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				A9B7001C25E0357200176027 /* Mood.swift */,
+				C1042D4125E19E9900EF63A2 /* Feeling.swift */,
+				C1042D4625E19EE000EF63A2 /* Intends.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -79,6 +90,7 @@
 				C1042D2925E169DD00EF63A2 /* RootView.swift */,
 				C1042D2F25E16A1800EF63A2 /* MoodView */,
 				C1042D2E25E16A0D00EF63A2 /* MeditationView */,
+				A9B7003B25E12D3000176027 /* Resources */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -86,7 +98,9 @@
 		A9B7003B25E12D3000176027 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A9B7FFEE25E0284E00176027 /* Assets.xcassets */,
 				A9B7003C25E12F9400176027 /* music_zapsplat_among_the_stars.mp3 */,
+				C1042D4B25E1AF6000EF63A2 /* Strings.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -104,11 +118,9 @@
 		A9B7FFEB25E0284B00176027 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				A9B7003B25E12D3000176027 /* Resources */,
 				A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */,
-				A9B7001025E0303700176027 /* Views */,
 				A9B7000F25E0302E00176027 /* Models */,
-				A9B7FFEE25E0284E00176027 /* Assets.xcassets */,
+				A9B7001025E0303700176027 /* Views */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -153,7 +165,7 @@
 		C1042D2F25E16A1800EF63A2 /* MoodView */ = {
 			isa = PBXGroup;
 			children = (
-				C1042D3025E16A2E00EF63A2 /* MoodView.swift */,
+				C1042D3025E16A2E00EF63A2 /* FeelingView.swift */,
 			);
 			path = MoodView;
 			sourceTree = "<group>";
@@ -258,9 +270,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9B7002E25E0429100176027 /* TimerView.swift in Sources */,
+				C1042D4C25E1AF6000EF63A2 /* Strings.swift in Sources */,
+				C1042D4725E19EE000EF63A2 /* Intends.swift in Sources */,
 				A9B7001D25E0357200176027 /* Mood.swift in Sources */,
 				C1042D2325E1688700EF63A2 /* MeditationView.swift in Sources */,
-				C1042D3125E16A2E00EF63A2 /* MoodView.swift in Sources */,
+				C1042D4225E19E9900EF63A2 /* Feeling.swift in Sources */,
+				C1042D3125E16A2E00EF63A2 /* FeelingView.swift in Sources */,
 				A9B7003525E051C900176027 /* PolygonShape.swift in Sources */,
 				C1042D2A25E169DD00EF63A2 /* RootView.swift in Sources */,
 				A9B7FFFF25E0284E00176027 /* VisualizerApp.swift in Sources */,
@@ -273,9 +288,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9B7002F25E0429100176027 /* TimerView.swift in Sources */,
+				C1042D4D25E1AF6000EF63A2 /* Strings.swift in Sources */,
+				C1042D4825E19EE000EF63A2 /* Intends.swift in Sources */,
 				A9B7001E25E0357200176027 /* Mood.swift in Sources */,
 				C1042D2425E1688700EF63A2 /* MeditationView.swift in Sources */,
-				C1042D3225E16A2E00EF63A2 /* MoodView.swift in Sources */,
+				C1042D4325E19E9900EF63A2 /* Feeling.swift in Sources */,
+				C1042D3225E16A2E00EF63A2 /* FeelingView.swift in Sources */,
 				A9B7003625E051CA00176027 /* PolygonShape.swift in Sources */,
 				C1042D2B25E169DD00EF63A2 /* RootView.swift in Sources */,
 				A9B7000025E0284E00176027 /* VisualizerApp.swift in Sources */,

@@ -15,7 +15,7 @@ struct RootView: View {
             MeditationView(mood: .depressed)
                 .transition(.opacity)
         } else {
-            MoodView()
+            FeelingView()
                 .onTapGesture {
                     withAnimation(.easeIn(duration: 1)) {
                         isMeditationViewVisible.toggle()

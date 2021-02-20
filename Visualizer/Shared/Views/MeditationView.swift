@@ -89,7 +89,7 @@ struct MeditationView: View {
                         .onChanged { gesture in
                             withAnimation(.interpolatingSpring(stiffness: 200, damping: 20)) {
                                 self.offset = gesture.translation
-                                self.scalePolygon = 2
+                                self.scalePolygon = 0.3
                             }
                         }
                         .onEnded { gesture in
@@ -100,19 +100,19 @@ struct MeditationView: View {
                         }
                 )
                 Spacer()
-//                if scale == 1 {
-//                    Text("Breathe in")
-//                        .foregroundColor(.white)
-//                        .fontWeight(.heavy)
-//                        .font(.largeTitle)
-//                        .animation(.easeInOut(duration: mood.defaultSpeed))
-//                } else {
-//                    Text("Breathe out")
-//                        .foregroundColor(.white)
-//                        .fontWeight(.heavy)
-//                        .font(.largeTitle)
-//                        .animation(.easeInOut(duration: mood.defaultSpeed))
-//                }
+                if scale == 1 {
+                    Text("Breathe in")
+                        .foregroundColor(.white)
+                        .fontWeight(.heavy)
+                        .font(.largeTitle)
+                        .animation(.easeInOut(duration: mood.defaultSpeed))
+                } else {
+                    Text("Breathe out")
+                        .foregroundColor(.white)
+                        .fontWeight(.heavy)
+                        .font(.largeTitle)
+                        .animation(.easeInOut(duration: mood.defaultSpeed))
+                }
             }
             Spacer()
         }

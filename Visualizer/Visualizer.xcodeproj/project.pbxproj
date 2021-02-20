@@ -35,6 +35,8 @@
 		C1042D8725E1B3DC00EF63A2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D8525E1B3DC00EF63A2 /* RootView.swift */; };
 		C1042D8F25E1B3F400EF63A2 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D8E25E1B3F400EF63A2 /* MeditationView.swift */; };
 		C1042D9025E1B3F400EF63A2 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D8E25E1B3F400EF63A2 /* MeditationView.swift */; };
+		C1042D9625E1C02200EF63A2 /* Extesions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D9525E1C02200EF63A2 /* Extesions.swift */; };
+		C1042D9725E1C02200EF63A2 /* Extesions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D9525E1C02200EF63A2 /* Extesions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,7 @@
 		C1042D7425E1B33600EF63A2 /* music_zapsplat_among_the_stars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_zapsplat_among_the_stars.mp3; sourceTree = "<group>"; };
 		C1042D8525E1B3DC00EF63A2 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C1042D8E25E1B3F400EF63A2 /* MeditationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
+		C1042D9525E1C02200EF63A2 /* Extesions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extesions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,7 @@
 				C1042D7225E1B33600EF63A2 /* Strings.swift */,
 				C1042D7325E1B33600EF63A2 /* Assets.xcassets */,
 				C1042D7425E1B33600EF63A2 /* music_zapsplat_among_the_stars.mp3 */,
+				C1042D9525E1C02200EF63A2 /* Extesions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -273,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1042D9625E1C02200EF63A2 /* Extesions.swift in Sources */,
 				C1042D4725E19EE000EF63A2 /* Intends.swift in Sources */,
 				A9B7001D25E0357200176027 /* MoodAnimation.swift in Sources */,
 				C1042D7525E1B33600EF63A2 /* Strings.swift in Sources */,
@@ -293,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1042D9725E1C02200EF63A2 /* Extesions.swift in Sources */,
 				C1042D4825E19EE000EF63A2 /* Intends.swift in Sources */,
 				A9B7001E25E0357200176027 /* MoodAnimation.swift in Sources */,
 				C1042D7625E1B33600EF63A2 /* Strings.swift in Sources */,

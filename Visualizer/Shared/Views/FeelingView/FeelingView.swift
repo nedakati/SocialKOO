@@ -7,57 +7,54 @@
 
 import SwiftUI
 
-//private struct FadeAnimationView: View {
-//    var body: some View {
-//        ZStack {
-//
-//        }
-//    }
-//}
-
 struct FeelingView: View {
     @State private var currentStateIndex: Int = 2
     private let states: [Feeling] = [.sob, .confused, .neutral, .grin, .star]
 
-    @State private var firstGradient = Gradient(colors: Feeling.neutral.gradient)
-    @State private var secondGradient = Gradient(colors: Feeling.neutral.gradient)
+    @State private var isFirstLayer = true
 
-    @State private var isFirstOn = true
+    let onSelectDone: (() -> Void)?
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: Feeling.neutral.gradient), startPoint: .top, endPoint: .bottom)
-                .animation(.spring())
-                .opacity(isFirstOn ? 1 : 0)
+            LinearGradient(gradient: Gradient(colors: gradientSecondLayer), startPoint: .top, endPoint: .bottom)
 
-            LinearGradient(gradient: Gradient(colors: Feeling.grin.gradient), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors: gradientFirstLayer), startPoint: .top, endPoint: .bottom)
+                .opacity(self.isFirstLayer ? 1 : 0)
                 .animation(.spring())
-                .opacity(isFirstOn ? 0 : 1)
 
             VStack {
+                Spacer()
+
                 Text(Strings.howAreYouFeeling)
                     .font(.system(size: 34, weight: .bold))
                     .multilineTextAlignment(.center)
 
                 ZStack {
-                    Image(Feeling.neutral.image)
+                    imageFirstLayer
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .opacity(isFirstOn ? 1 : 0)
                         .animation(.easeIn(duration: 0.33))
 
-                    Image(Feeling.grin.image)
+                    imageSecondLayer
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .opacity(isFirstOn ? 0 : 1)
+                        .opacity(self.isFirstLayer ? 1 : 0)
                         .animation(.easeIn(duration: 0.33))
+
                 }
 
                 Text(Strings.swipeUpAndDown)
                     .font(.system(size: 16, weight: .medium))
                     .multilineTextAlignment(.center)
+
+                Spacer()
+
+                MainButton(title: "Done") {
+                    onSelectDone?()
+                }
+                .padding(.bottom)
             }
-            .padding(.horizontal, 24)
         }
         .gesture(
             DragGesture()
@@ -73,19 +70,47 @@ struct FeelingView: View {
 
                     if newStateIndex != currentStateIndex {
                         withAnimation(.linear(duration: 1)) {
-                            isFirstOn.toggle()
                             currentStateIndex = newStateIndex
+                            setGradient(gradient: states[currentStateIndex].gradient)
+                            setImage(image: Image(states[currentStateIndex].image))
+                            isFirstLayer.toggle()
                         }
                     }
                 }
         )
         .ignoresSafeArea(.all)
     }
+
+    // MARK: - Gradient hell
+
+    @State private var gradientFirstLayer = Feeling.neutral.gradient
+    @State private var gradientSecondLayer = Feeling.neutral.gradient
+
+    private func setGradient(gradient: [Color]) {
+        if isFirstLayer {
+            gradientFirstLayer = gradient
+        } else {
+            gradientSecondLayer = gradient
+        }
+    }
+
+    // MARK: - Image hell
+
+    @State private var imageFirstLayer = Image(Feeling.neutral.image)
+    @State private var imageSecondLayer = Image(Feeling.neutral.image)
+
+    private func setImage(image: Image) {
+        if isFirstLayer {
+            imageFirstLayer = image
+        } else {
+            imageSecondLayer = image
+        }
+    }
 }
 
 struct MoodView_Previews: PreviewProvider {
     static var previews: some View {
-        FeelingView()
+        FeelingView(onSelectDone: nil)
     }
 }
 

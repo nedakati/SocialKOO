@@ -29,7 +29,9 @@ struct Polygon: View {
     
     var body: some View {
         PolygonShape(sides: sides)
-            .stroke(Color.white, lineWidth: 3)
+            .foregroundColor(Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)))
+            .cornerRadius(20)
+            .opacity(0.3)
             .frame(width: width, height: height)
             .animation(.easeInOut(duration: mood.speed))
             .animation(.easeIn)
@@ -44,6 +46,8 @@ struct MeditationView: View {
     var mood: Mood
     
     @State private var scale: CGFloat = 1
+    @State private var scalePolygon: CGFloat = 1
+    @State private var offset = CGSize.zero
 
     private var audioPlayer: AVAudioPlayer?
     
@@ -63,13 +67,31 @@ struct MeditationView: View {
             GradientBackgroundView(colors: mood.gradients)
                 .ignoresSafeArea()
             VStack {
+                Spacer()
                 ZStack {
-                    ForEach(1 ..< 20) { number in
-                        Polygon(width: CGFloat(20 * number), height: CGFloat(20 * number), mood: mood)
+                    ForEach(1 ..< 10) { number in
+                        Polygon(width: CGFloat(50 * number), height: CGFloat(50 * number), mood: mood)
                             .scaleEffect(scale)
+                            .rotation3DEffect(.degrees(scale == 1 ? 180 : 45), axis: (x: 0, y: 0, z: 1))
                     }
                 }
-                Spacer()
+                .offset(x: offset.width, y: offset.height)
+                .scaleEffect(scalePolygon)
+                .gesture(
+                    DragGesture()
+                        .onChanged { gesture in
+                            withAnimation(.interpolatingSpring(stiffness: 200, damping: 20)) {
+                                self.offset = gesture.translation
+                                self.scalePolygon = 2
+                            }
+                        }
+                        .onEnded { gesture in
+                            withAnimation(.interpolatingSpring(stiffness: 300, damping: 10)) {
+                                self.offset = .zero
+                                self.scalePolygon = 1
+                            }
+                        }
+                )
                 if scale == 1 {
                     Text("Breathe in")
                         .foregroundColor(.white)

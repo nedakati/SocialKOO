@@ -19,6 +19,10 @@
 		A9D3006825E1AD530086CE70 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006225E1AD520086CE70 /* GradientBackgroundView.swift */; };
 		A9D3006B25E1AD530086CE70 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006425E1AD520086CE70 /* TimerView.swift */; };
 		A9D3006C25E1AD530086CE70 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3006425E1AD520086CE70 /* TimerView.swift */; };
+		A9D3008F25E257E00086CE70 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3008E25E257E00086CE70 /* SummaryView.swift */; };
+		A9D3009325E26E0E0086CE70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3009225E26E0E0086CE70 /* Extensions.swift */; };
+		A9D3009A25E271DF0086CE70 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3009925E271DF0086CE70 /* ShareView.swift */; };
+		A9D300AB25E291670086CE70 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D300AA25E291670086CE70 /* ImageSaver.swift */; };
 		C1042D3125E16A2E00EF63A2 /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* FeelingView.swift */; };
 		C1042D3225E16A2E00EF63A2 /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* FeelingView.swift */; };
 		C1042D4225E19E9900EF63A2 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4125E19E9900EF63A2 /* Feeling.swift */; };
@@ -55,6 +59,10 @@
 		A9D3006125E1AD520086CE70 /* PolygonShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolygonShape.swift; sourceTree = "<group>"; };
 		A9D3006225E1AD520086CE70 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		A9D3006425E1AD520086CE70 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		A9D3008E25E257E00086CE70 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		A9D3009225E26E0E0086CE70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A9D3009925E271DF0086CE70 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		A9D300AA25E291670086CE70 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		C1042D3025E16A2E00EF63A2 /* FeelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingView.swift; sourceTree = "<group>"; };
 		C1042D4125E19E9900EF63A2 /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 		C1042D4625E19EE000EF63A2 /* Intend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intend.swift; sourceTree = "<group>"; };
@@ -102,6 +110,7 @@
 				C1042D8525E1B3DC00EF63A2 /* RootView.swift */,
 				C1B2127525E2560F004730E9 /* IntendsView */,
 				C1042D2F25E16A1800EF63A2 /* FeelingView */,
+				A9D3008D25E257CA0086CE70 /* Summary */,
 				C1042D2E25E16A0D00EF63A2 /* MeditationView */,
 				C1B2128225E267E1004730E9 /* Buttons */,
 			);
@@ -124,7 +133,9 @@
 				A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */,
 				A9B7000F25E0302E00176027 /* Models */,
 				A9B7001025E0303700176027 /* Views */,
+				A9D300A925E291560086CE70 /* Utility */,
 				C1042D7125E1B33600EF63A2 /* Resources */,
+				A9D3009625E26E130086CE70 /* Extensions */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -153,6 +164,31 @@
 				A9B7FFFE25E0284E00176027 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		A9D3008D25E257CA0086CE70 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				A9D3008E25E257E00086CE70 /* SummaryView.swift */,
+				A9D3009925E271DF0086CE70 /* ShareView.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		A9D3009625E26E130086CE70 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A9D3009225E26E0E0086CE70 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A9D300A925E291560086CE70 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A9D300AA25E291670086CE70 /* ImageSaver.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		C1042D2E25E16A0D00EF63A2 /* MeditationView */ = {
@@ -303,15 +339,19 @@
 			files = (
 				C1042D9625E1C02200EF63A2 /* Extesions.swift in Sources */,
 				C1042D4725E19EE000EF63A2 /* Intend.swift in Sources */,
+				A9D3008F25E257E00086CE70 /* SummaryView.swift in Sources */,
 				A9B7001D25E0357200176027 /* MoodAnimation.swift in Sources */,
+				A9D300AB25E291670086CE70 /* ImageSaver.swift in Sources */,
 				C1042D7525E1B33600EF63A2 /* Strings.swift in Sources */,
 				C1042D8625E1B3DC00EF63A2 /* RootView.swift in Sources */,
+				A9D3009A25E271DF0086CE70 /* ShareView.swift in Sources */,
 				C1042D4225E19E9900EF63A2 /* Feeling.swift in Sources */,
 				C1042D3125E16A2E00EF63A2 /* FeelingView.swift in Sources */,
 				C1042D8F25E1B3F400EF63A2 /* MeditationView.swift in Sources */,
 				C1B2127725E25625004730E9 /* IntendsView.swift in Sources */,
 				A9D3006525E1AD530086CE70 /* PolygonShape.swift in Sources */,
 				A9B7001D25E0357200176027 /* MoodAnimation.swift in Sources */,
+				A9D3009325E26E0E0086CE70 /* Extensions.swift in Sources */,
 				A9D3006725E1AD530086CE70 /* GradientBackgroundView.swift in Sources */,
 				A9D3006B25E1AD530086CE70 /* TimerView.swift in Sources */,
 				A9D3005325E1A6330086CE70 /* MainButton.swift in Sources */,

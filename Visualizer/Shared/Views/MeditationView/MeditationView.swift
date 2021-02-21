@@ -43,6 +43,7 @@ struct Polygon: View {
 struct MeditationView: View {
     
     var mood: MoodAnimation
+    let onSelectDone: (() -> Void)?
     
     @State private var scale: CGFloat = 1
     @State private var scalePolygon: CGFloat = 1
@@ -52,8 +53,9 @@ struct MeditationView: View {
 
     private var audioPlayer: AVAudioPlayer?
     
-    init(mood: MoodAnimation) {
+    init(mood: MoodAnimation, onSelectDone: (() -> Void)?) {
         self.mood = mood
+        self.onSelectDone = onSelectDone
         if let path = Bundle.main.path(forResource: "music_zapsplat_among_the_stars", ofType: "mp3") {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
@@ -76,7 +78,7 @@ struct MeditationView: View {
                     }
                     Spacer()
                     Button(action: {
-                        // What to perform
+                        onSelectDone?()
                     }) {
                         Text(Strings.imBetter)
                             .foregroundColor(.black)
@@ -96,8 +98,8 @@ struct MeditationView: View {
                             .rotation3DEffect(.degrees(scale == 1 ? 180 : 45), axis: (x: 0, y: 0, z: 1))
                     }
                 }
-                .offset(x: offset.width, y: offset.height)
                 .scaleEffect(scalePolygon)
+                .offset(x: offset.width, y: offset.height)
                 .gesture(
                     DragGesture()
                         .onChanged { gesture in
@@ -112,6 +114,18 @@ struct MeditationView: View {
                                 self.scalePolygon = 1
                             }
                         }
+                )
+                .gesture(MagnificationGesture()
+                    .onChanged { value in
+                        withAnimation() {
+                            self.scalePolygon = value.magnitude
+                        }
+                    }
+                    .onEnded { _  in
+                        withAnimation(.interpolatingSpring(stiffness: 300, damping: 10)) {
+                            self.scalePolygon = 1
+                        }
+                    }
                 )
                 Spacer()
                 if scale == 1 {
@@ -144,11 +158,5 @@ struct MeditationView: View {
         audioPlayer?.play()
         audioPlayer?.numberOfLoops = 3
 
-    }
-}
-
-struct MeditationView_Previews: PreviewProvider {
-    static var previews: some View {
-        MeditationView(mood: .mindDistraction)
     }
 }

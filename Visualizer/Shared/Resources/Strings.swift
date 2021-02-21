@@ -17,4 +17,11 @@ enum Strings {
     static let moodBoost = "mood boost"
     static let stopWorrying = "stop worrying"
     static let relievePain = "relieve pain"
+    static let summary = "Summary"
+    static let moodBoosting = "Mood boosting"
+    static let iHaveTried = "I've tried"
+    static let tryItYourself = "Try it yourself!"
+    static let saveToPhotoGallery = "Save to photo gallery"
+    static let overview = "Overview"
+    static let imageSaved = "Image saved!"
 }

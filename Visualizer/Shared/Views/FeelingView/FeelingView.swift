@@ -140,11 +140,11 @@ extension Feeling {
 
     var gradientColors: [Color] {
         switch self {
-        case .sob: return [Color("AccentColor"), Color(#colorLiteral(red: 0.5951487422, green: 0.5375294685, blue: 0.437197268, alpha: 1))]
-        case .confused: return [Color("AccentColor"), Color(#colorLiteral(red: 0.8427037597, green: 0.7486416698, blue: 0.5794628859, alpha: 1))]
-        case .neutral: return [Color("AccentColor"), Color(#colorLiteral(red: 0.877808094, green: 0.7393150926, blue: 0.511480689, alpha: 1))]
-        case .grin: return [Color("AccentColor"), Color(#colorLiteral(red: 0.9316776395, green: 0.715811193, blue: 0.5352671146, alpha: 1))]
-        case .star: return [Color("AccentColor"), Color(#colorLiteral(red: 0.9801376462, green: 0.6582708359, blue: 0.5666258931, alpha: 1))]
+        case .sob: return [Color("BackgroundColor"), Color("SobColorBottom")]
+        case .confused: return [Color("BackgroundColor"), Color("ConfusedColorBottom")]
+        case .neutral: return [Color("BackgroundColor"), Color("NeutralColorBottom")]
+        case .grin: return [Color("BackgroundColor"), Color("GrinColorBottom")]
+        case .star: return [Color("BackgroundColor"), Color("StarColorBottom")]
         }
     }
 }

@@ -74,19 +74,19 @@ extension Intend {
     
     var songTitle: String {
         switch self {
-        case .chillOut: return "music_zapsplat_among_the_stars"
-        case .moodBoost: return "music_zapsplat_among_the_stars"
-        case .stopWorrying: return "music_zapsplat_among_the_stars"
-        case .mindDistraction: return "music_zapsplat_among_the_stars"
+        case .chillOut: return "chill"
+        case .moodBoost: return "heart"
+        case .stopWorrying: return "calm"
+        case .mindDistraction: return "techno"
         }
     }
     
     var songType: String {
         switch self {
         case .chillOut: return "mp3"
-        case .moodBoost: return "mp3"
-        case .stopWorrying: return "mp3"
-        case .mindDistraction: return "mp3"
+        case .moodBoost: return "wav"
+        case .stopWorrying: return "wav"
+        case .mindDistraction: return "wav"
         }
     }
 }

@@ -18,48 +18,60 @@ struct ResultView: View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: intend.gradients), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
-        ZStack {
-            Color(.white)
-                .opacity(0.5)
-                .cornerRadius(40)
-            VStack {
-                Text(Strings.iHaveTried)
-                    .font(.body)
-                    .fontWeight(.regular)
-                    .foregroundColor(.black)
-                Text(intend.text.capitalizingFirstLetter())
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                Text(timeText)
-                    .font(.headline)
-                    .foregroundColor(.black)
-                HStack {
-                        Image(fromFeeling.image)
-                            .resizable()
-                            .scaledToFit()
-                            .aspectRatio(1, contentMode: .fit)
-                        Image(systemName: "arrow.right")
-                            .foregroundColor(.black)
-                            .font(.system(size: 20, weight: .bold))
-                        Image(toFeeling.image)
-                            .resizable()
-                            .scaledToFit()
-                            .aspectRatio(1, contentMode: .fit)
+
+            ZStack {
+                Color(.white)
+                    .opacity(0.5)
+                    .cornerRadius(40)
+
+                VStack {
+                    Text(Strings.iHaveTried)
+                        .font(.body)
+                        .fontWeight(.regular)
+                        .foregroundColor(.black)
+                        .padding(.top)
+
+                    Text(intend.text.capitalizingFirstLetter())
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+
+                    Text(timeText)
+                        .font(.headline)
+                        .foregroundColor(.black)
+
+                    HStack {
+                            Image(fromFeeling.image)
+                                .resizable()
+                                .scaledToFit()
+                                .aspectRatio(1, contentMode: .fit)
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(.black)
+                                .font(.system(size: 20, weight: .bold))
+                            Image(toFeeling.image)
+                                .resizable()
+                                .scaledToFit()
+                                .aspectRatio(1, contentMode: .fit)
+                    }
+
+                    Text(Strings.tryItYourself)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .padding(.bottom)
+
+                    Text(Strings.madeWithLove)
+                        .font(.system(size: 12))
+                        .foregroundColor(.black)
+                        .padding(.bottom)
                 }
-                Text(Strings.tryItYourself)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .padding(.bottom)
             }
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .padding(.horizontal, 24)
+            .padding(.vertical, 24)
+            .cornerRadius(10)
+            .aspectRatio(1, contentMode: .fit)
         }
-        .frame(minWidth: 0, maxWidth: .infinity)
-        .padding(.horizontal, 24)
-        .padding(.vertical, 24)
-        .cornerRadius(10)
-        .aspectRatio(1, contentMode: .fit)
-    }
     }
 }
 
@@ -164,5 +176,11 @@ struct ShareView: View {
                                     }
             )
         }
+    }
+}
+
+struct ResultView_Previews: PreviewProvider {
+    static var previews: some View {
+        ResultView(intend: .constant(.chillOut), fromFeeling: .constant(.confused), toFeeling: .constant(.star), timeText: .constant("12"))
     }
 }

@@ -114,7 +114,7 @@ struct ShareView: View {
                     .shadow(color: Color.black.opacity(0.3), radius: 16, x: 0, y: 16)
                     Spacer()
 
-                    MainButton(title: Strings.done) {
+                    MainButton(title: Strings.letsGoItAgain) {
                         self.onDone?()
                         self.presentationMode.wrappedValue.dismiss()
                     }

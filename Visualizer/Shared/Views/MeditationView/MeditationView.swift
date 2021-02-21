@@ -98,8 +98,8 @@ struct MeditationView: View {
                             .rotation3DEffect(.degrees(scale == 1 ? 180 : 45), axis: (x: 0, y: 0, z: 1))
                     }
                 }
-                .offset(x: offset.width, y: offset.height)
                 .scaleEffect(scalePolygon)
+                .offset(x: offset.width, y: offset.height)
                 .gesture(
                     DragGesture()
                         .onChanged { gesture in
@@ -114,6 +114,18 @@ struct MeditationView: View {
                                 self.scalePolygon = 1
                             }
                         }
+                )
+                .gesture(MagnificationGesture()
+                    .onChanged { value in
+                        withAnimation() {
+                            self.scalePolygon = value.magnitude
+                        }
+                    }
+                    .onEnded { _  in
+                        withAnimation(.interpolatingSpring(stiffness: 300, damping: 10)) {
+                            self.scalePolygon = 1
+                        }
+                    }
                 )
                 Spacer()
                 if scale == 1 {

@@ -18,4 +18,5 @@ enum Strings {
     static let tryItYourself = "Try it yourself!"
     static let saveToPhotoGallery = "Save to photo gallery"
     static let overview = "Overview"
+    static let imageSaved = "Image saved!"
 }

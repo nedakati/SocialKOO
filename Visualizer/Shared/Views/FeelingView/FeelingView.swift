@@ -117,7 +117,7 @@ struct MoodView_Previews: PreviewProvider {
     }
 }
 
-private extension Feeling {
+extension Feeling {
     var image: String {
         switch self {
         case .sob: return "Moods/sob"

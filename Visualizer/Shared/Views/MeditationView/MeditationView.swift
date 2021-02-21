@@ -43,6 +43,7 @@ struct Polygon: View {
 struct MeditationView: View {
     
     var mood: MoodAnimation
+    let onSelectDone: (() -> Void)?
     
     @State private var scale: CGFloat = 1
     @State private var scalePolygon: CGFloat = 1
@@ -52,8 +53,9 @@ struct MeditationView: View {
 
     private var audioPlayer: AVAudioPlayer?
     
-    init(mood: MoodAnimation) {
+    init(mood: MoodAnimation, onSelectDone: (() -> Void)?) {
         self.mood = mood
+        self.onSelectDone = onSelectDone
         if let path = Bundle.main.path(forResource: "music_zapsplat_among_the_stars", ofType: "mp3") {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
@@ -76,7 +78,7 @@ struct MeditationView: View {
                     }
                     Spacer()
                     Button(action: {
-                        // What to perform
+                        onSelectDone?()
                     }) {
                         Text(Strings.imBetter)
                             .foregroundColor(.black)
@@ -144,11 +146,5 @@ struct MeditationView: View {
         audioPlayer?.play()
         audioPlayer?.numberOfLoops = 3
 
-    }
-}
-
-struct MeditationView_Previews: PreviewProvider {
-    static var previews: some View {
-        MeditationView(mood: .mindDistraction)
     }
 }

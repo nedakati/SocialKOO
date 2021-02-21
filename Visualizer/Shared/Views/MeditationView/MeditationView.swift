@@ -68,6 +68,7 @@ struct MeditationView: View {
                 .gesture(MagnificationGesture()
                     .onChanged { value in
                         withAnimation() {
+                            lightHapticFeedback()
                             self.scalePolygon = value.magnitude
                         }
                     }
@@ -156,5 +157,10 @@ struct MeditationView: View {
     private func simpleHapticFeedback() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
+    }
+    
+    private func lightHapticFeedback() {
+        let impactMed = UIImpactFeedbackGenerator(style: .soft)
+        impactMed.impactOccurred()
     }
 }

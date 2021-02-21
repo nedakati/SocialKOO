@@ -15,7 +15,7 @@ struct IntendsView: View {
     var onSelectBack: (() -> Void)
     var onSelectIntend: ((Intend) -> Void)
 
-    private let intends: [Intend] = [.chillOut, .moodBoost, .stopWorrying, .relievePain]
+    private let intends: [Intend] = [.chillOut, .moodBoost, .stopWorrying, .mindDistraction]
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -93,7 +93,7 @@ private extension Intend {
         case .chillOut: return "Moods/confused"
         case .moodBoost: return "Moods/grin"
         case .stopWorrying: return "Moods/neutral"
-        case .relievePain: return "Moods/sob"
+        case .mindDistraction: return "Moods/sob"
         }
     }
 
@@ -102,7 +102,7 @@ private extension Intend {
         case .chillOut: return Strings.chillOut
         case .moodBoost: return Strings.moodBoost
         case .stopWorrying: return Strings.stopWorrying
-        case .relievePain: return Strings.relievePain
+        case .mindDistraction: return Strings.relievePain
         }
     }
 }

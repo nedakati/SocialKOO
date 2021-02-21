@@ -15,12 +15,13 @@ struct RootView: View {
     @State private var isFeelingViewVisible = false
     @State private var currentFeeling: Feeling = .neutral
     @State private var afterFeeling: Feeling = .neutral
+    @State private var currentIntend: Intend = .chillOut
 
     @Namespace private var animation
 
     var body: some View {
         if isMeditationViewVisible {
-            MeditationView(mood: .chillOut) {
+            MeditationView(intend: currentIntend) {
                 isFeelingViewVisible.toggle()
                 isMeditationViewVisible.toggle()
                 isMeditationCompleted.toggle()
@@ -32,6 +33,7 @@ struct RootView: View {
                     isFeelingViewVisible.toggle()
                 }
             }, onSelectIntend: { intend in
+                currentIntend = intend
                 isMeditationViewVisible.toggle()
             })
         } else {
@@ -47,7 +49,7 @@ struct RootView: View {
                 }
             })
             .sheet(isPresented: $reviewCompeted) {
-                ShareView(mood: .constant(.chillOut), fromFeeling: $currentFeeling, toFeeling: $afterFeeling)
+                ShareView(intend: $currentIntend, fromFeeling: $currentFeeling, toFeeling: $afterFeeling)
             }
         }
     }

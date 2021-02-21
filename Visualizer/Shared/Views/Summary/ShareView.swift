@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ResultView: View {
 
-    @Binding var mood: MoodAnimation
+    @Binding var intend: Intend
     @Binding var fromFeeling: Feeling
     @Binding var toFeeling: Feeling
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: mood.gradients), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: intend.gradients), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
         ZStack {
             Color(.white)
@@ -62,8 +62,8 @@ struct ResultView: View {
 }
 
 struct ShareView: View {
-    
-    @Binding private var mood: MoodAnimation
+
+    @Binding private var intend: Intend
     @Binding private var fromFeeling: Feeling
     @Binding private var toFeeling: Feeling
     
@@ -72,9 +72,9 @@ struct ShareView: View {
     @State private var showShareSheet = false
     
     @Environment(\.presentationMode) private var presentationMode
-    
-    init(mood: Binding<MoodAnimation>, fromFeeling: Binding<Feeling>, toFeeling: Binding<Feeling>) {
-        _mood = mood
+
+    init(intend: Binding<Intend>, fromFeeling: Binding<Feeling>, toFeeling: Binding<Feeling>) {
+        _intend = intend
         _fromFeeling = fromFeeling
         _toFeeling = toFeeling
 
@@ -92,7 +92,7 @@ struct ShareView: View {
                     .ignoresSafeArea()
                 VStack {
                     GeometryReader { geometry in
-                        ResultView(mood: $mood, fromFeeling: $fromFeeling, toFeeling: $toFeeling)
+                        ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling)
                             .cornerRadius(20)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
@@ -107,7 +107,7 @@ struct ShareView: View {
                     Spacer()
                     MainButton(title: Strings.saveToPhotoGallery) {
                         if let geometry = geometry {
-                            let screenshot = ResultView(mood: $mood, fromFeeling: $fromFeeling, toFeeling: $toFeeling).takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
+                            let screenshot = ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling).takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
                             
                             let imageSaver = ImageSaver()
 

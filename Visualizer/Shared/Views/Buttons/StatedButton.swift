@@ -9,13 +9,12 @@ import SwiftUI
 
 // from: https://stackoverflow.com/questions/57617775/swiftui-button-selection
 struct SelectableButtonStyle: ButtonStyle {
-    var isSelected = false
-
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
+            .frame(height: 104)
             .overlay(
                 RoundedRectangle(cornerRadius: 24)
-                    .stroke(isSelected ? Color.primary : Color.clear, lineWidth: 2)
+                    .stroke(configuration.isPressed ? Color.primary : Color.clear, lineWidth: 2)
             )
     }
 }
@@ -34,7 +33,6 @@ struct StatedButton<Label>: View where Label: View {
 
     var body: some View {
         Button(action: {
-            self.buttonStyle.isSelected = !self.buttonStyle.isSelected
             self.action?()
         }) {
             label?()

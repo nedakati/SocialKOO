@@ -50,6 +50,7 @@ struct FeelingView: View {
                 Text(titleText)
                     .font(.system(size: 34, weight: .bold))
                     .multilineTextAlignment(.center)
+                    .padding(.top, 16)
 
                 ZStack {
                     imageSecondLayer

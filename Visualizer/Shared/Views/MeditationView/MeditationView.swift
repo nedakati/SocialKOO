@@ -37,29 +37,7 @@ struct MeditationView: View {
         ZStack {
             GradientBackgroundView(colors: intend.gradients)
                 .ignoresSafeArea()
-            VStack(alignment: .center) {
-                HStack {
-                    if didStart {
-                        TimerView(time: $time, animation: intend) {
-                          updateSpeed()
-                        }
-                    }
-                    Spacer()
-                    Button(action: {
-                        onSelectDone?(time)
-                    }) {
-                        Text(Strings.imBetter)
-                            .foregroundColor(.black)
-                            .fontWeight(.semibold)
-                            .font(.body)
-                    }
-                    .frame(width: 120, height: 30)
-                    .background(Color.white.opacity(0.5))
-                    .cornerRadius(24)
-                    .shadow(color: Color.black.opacity(0.16), radius: 16, x: 0, y: 16)
-                }
-                .padding(EdgeInsets(top: 24, leading: 48, bottom: 24, trailing: 48))
-                Spacer()
+            ZStack {
                 ZStack {
                     ForEach((1 ..< intend.layers).reversed(), id: \.self) { number in
                         Polygon(width: CGFloat(intend.polygonBaseSize * number), height: CGFloat(intend.polygonBaseSize * number), speed: speed)
@@ -68,6 +46,7 @@ struct MeditationView: View {
                             .foregroundColor(intend.mainColor)
                     }
                 }
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 24)
                 .scaleEffect(scalePolygon)
                 .offset(x: offset.width, y: offset.height)
                 .gesture(
@@ -84,7 +63,7 @@ struct MeditationView: View {
                                 self.scalePolygon = 1
                             }
                         }
-                )
+                    )
                 .gesture(MagnificationGesture()
                     .onChanged { value in
                         withAnimation() {
@@ -97,15 +76,37 @@ struct MeditationView: View {
                         }
                     }
                 )
-                Spacer()
+                VStack {
+                    HStack {
+                        if didStart {
+                            TimerView(time: $time, animation: intend) {
+                                updateSpeed()
+                            }
+                        }
+                        Spacer()
+                        Button(action: {
+                            onSelectDone?(time)
+                        }) {
+                            Text(Strings.imBetter)
+                                .foregroundColor(.black)
+                                .fontWeight(.semibold)
+                                .font(.body)
+                        }
+                        .frame(width: 120, height: 30)
+                        .background(Color.white.opacity(0.5))
+                        .cornerRadius(24)
+                        .shadow(color: Color.black.opacity(0.16), radius: 16, x: 0, y: 16)
+                    }
+                    .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
+                    Spacer()
+                }
             }
-            .blur(radius: didStart ? 0 : 40)
             GradientBackgroundView(colors: [Color.white.opacity(0.3)])
                 .ignoresSafeArea()
                 .opacity(didStart ? 0 : 1)
                 .animation(.easeIn)
             Text(Strings.yourExperienceIsAboutToStart)
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .fontWeight(.heavy)
                 .font(.system(size: 21))
                 .multilineTextAlignment(.center)
@@ -114,11 +115,11 @@ struct MeditationView: View {
                 .animation(.easeIn)
         }
         .onAppear {
-            playSound()
             speed = 100
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 speed = intend.defaultSpeed
                 didStart = true
+                playSound()
             }
             let animation = Animation.easeInOut(duration: intend.defaultSpeed).repeatForever(autoreverses: true)
             withAnimation(animation) {
@@ -134,7 +135,7 @@ struct MeditationView: View {
     
     private func playSound() {
         audioPlayer?.play()
-        audioPlayer?.numberOfLoops = 3
+        audioPlayer?.numberOfLoops = 10
     }
     
     private func updateSpeed() {

@@ -27,7 +27,7 @@ struct ResultView: View {
                     .font(.body)
                     .fontWeight(.regular)
                     .foregroundColor(.black)
-                Text(Strings.moodBoosting)
+                Text(intend.text.capitalizingFirstLetter())
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
@@ -87,7 +87,7 @@ struct ShareView: View {
         self.onDone = onDone
 
         UINavigationBar.appearance().tintColor = .black
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.label]
         UINavigationBar.appearance().barTintColor = .clear
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
@@ -95,33 +95,29 @@ struct ShareView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                Color(.white)
-                    .ignoresSafeArea()
-                VStack {
-                    GeometryReader { geometry in
-                        ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling, timeText: $timeText)
-                            .cornerRadius(20)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.clear, lineWidth: 5)
-                            )
-                        .onAppear {
-                            self.geometry = geometry
-                        }
+            VStack {
+                GeometryReader { geometry in
+                    ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling, timeText: $timeText)
+                        .cornerRadius(20)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.clear, lineWidth: 5)
+                        )
+                    .onAppear {
+                        self.geometry = geometry
                     }
-                    .padding()
-                    .shadow(color: Color.black.opacity(0.3), radius: 16, x: 0, y: 16)
-                    Spacer()
+                }
+                .padding()
+                .shadow(color: Color.black.opacity(0.3), radius: 16, x: 0, y: 16)
+                Spacer()
 
-                    MainButton(title: Strings.done) {
-                        self.onDone?()
-                        self.presentationMode.wrappedValue.dismiss()
-                    }
-                    .padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24))
-                    .alert(isPresented: $showAlert) { () -> Alert in
-                        Alert(title: Text(Strings.imageSaved), message: Text(""), dismissButton: .cancel())
-                    }
+                MainButton(title: Strings.letsGoItAgain) {
+                    self.onDone?()
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+                .padding(EdgeInsets(top: 0, leading: 24, bottom: 16, trailing: 24))
+                .alert(isPresented: $showAlert) { () -> Alert in
+                    Alert(title: Text(Strings.imageSaved), message: Text(""), dismissButton: .cancel())
                 }
             }
             .onAppear {
@@ -140,7 +136,7 @@ struct ShareView: View {
                                         self.presentationMode.wrappedValue.dismiss()
                                     }) {
                                         Image(systemName: "xmark")
-                                            .foregroundColor(.black)
+                                            .foregroundColor(Color.primary)
                                             .font(.system(size: 18, weight: .regular))
                                     },
                                 trailing:
@@ -162,7 +158,7 @@ struct ShareView: View {
                                         }
                                     }) {
                                         Image(systemName: "arrow.down.circle")
-                                            .foregroundColor(.black)
+                                            .foregroundColor(Color.primary)
                                             .font(.system(size: 18, weight: .regular))
                                     }
             )

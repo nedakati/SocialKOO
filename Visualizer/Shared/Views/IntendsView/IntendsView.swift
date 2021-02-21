@@ -27,6 +27,9 @@ struct IntendsView: View {
                         .matchedGeometryEffect(id: "ImageAnimation", in: transitionNamespace)
                         .frame(width: 160, height: 160)
                         .padding(.top, 16)
+                        .onTapGesture {
+                            onSelectBack()
+                        }
 
                     Text(Strings.whatDoYouWantToAchieve)
                         .font(.system(size: 34, weight: .bold))
@@ -52,12 +55,12 @@ struct IntendsView: View {
                                     Text(item.text)
                                         .font(.system(size: 21, weight: .bold))
                                         .foregroundColor(Color.primary)
+                                        .frame(height: 104)
+                                        .frame(maxWidth: .infinity)
+                                        .background(Color(#colorLiteral(red: 0.8196078431, green: 0.8196078431, blue: 0.8196078431, alpha: 1)).opacity(0.3))
+                                        .cornerRadius(24)
                                 }
                             }
-                            .frame(height: 104)
-                            .frame(maxWidth: .infinity)
-                            .background(Color(#colorLiteral(red: 0.8196078431, green: 0.8196078431, blue: 0.8196078431, alpha: 1)).opacity(0.3))
-                            .cornerRadius(24)
                             .padding(.bottom, 16)
                         }
                     }
@@ -88,7 +91,7 @@ struct IntendsView: View {
 
 // MARK: - Intend
 
-private extension Intend {
+extension Intend {
     var imageName: String {
         switch self {
         case .chillOut: return "Moods/chillOut"

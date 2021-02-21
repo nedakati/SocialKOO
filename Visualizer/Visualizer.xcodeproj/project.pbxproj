@@ -24,14 +24,14 @@
 		A9D3009325E26E0E0086CE70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3009225E26E0E0086CE70 /* Extensions.swift */; };
 		A9D3009A25E271DF0086CE70 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3009925E271DF0086CE70 /* ShareView.swift */; };
 		A9D300AB25E291670086CE70 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D300AA25E291670086CE70 /* ImageSaver.swift */; };
-		B772FCD925E2E93500362E70 /* calm.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCD825E2E93500362E70 /* calm.wav */; };
-		B772FCDA25E2E93500362E70 /* calm.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCD825E2E93500362E70 /* calm.wav */; };
-		B772FCDF25E2E97700362E70 /* chill.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B772FCDD25E2E97700362E70 /* chill.mp3 */; };
-		B772FCE025E2E97700362E70 /* chill.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B772FCDD25E2E97700362E70 /* chill.mp3 */; };
-		B772FCE125E2E97700362E70 /* techno.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCDE25E2E97700362E70 /* techno.wav */; };
-		B772FCE225E2E97700362E70 /* techno.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCDE25E2E97700362E70 /* techno.wav */; };
-		B772FCE825E2FECB00362E70 /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCE725E2FECB00362E70 /* heart.wav */; };
-		B772FCE925E2FECB00362E70 /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCE725E2FECB00362E70 /* heart.wav */; };
+		B772FCF825E2FFEA00362E70 /* calm.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCF425E2FFEA00362E70 /* calm.wav */; };
+		B772FCF925E2FFEA00362E70 /* calm.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCF425E2FFEA00362E70 /* calm.wav */; };
+		B772FCFA25E2FFEA00362E70 /* chill.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B772FCF525E2FFEA00362E70 /* chill.mp3 */; };
+		B772FCFB25E2FFEA00362E70 /* chill.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B772FCF525E2FFEA00362E70 /* chill.mp3 */; };
+		B772FCFC25E2FFEA00362E70 /* techno.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCF625E2FFEA00362E70 /* techno.wav */; };
+		B772FCFD25E2FFEA00362E70 /* techno.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCF625E2FFEA00362E70 /* techno.wav */; };
+		B772FCFE25E2FFEA00362E70 /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCF725E2FFEA00362E70 /* heart.wav */; };
+		B772FCFF25E2FFEA00362E70 /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = B772FCF725E2FFEA00362E70 /* heart.wav */; };
 		C1042D3125E16A2E00EF63A2 /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* FeelingView.swift */; };
 		C1042D3225E16A2E00EF63A2 /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* FeelingView.swift */; };
 		C1042D4225E19E9900EF63A2 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4125E19E9900EF63A2 /* Feeling.swift */; };
@@ -71,10 +71,10 @@
 		A9D3009225E26E0E0086CE70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A9D3009925E271DF0086CE70 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		A9D300AA25E291670086CE70 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
-		B772FCD825E2E93500362E70 /* calm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = calm.wav; path = "../../../../untitled folder/calm.wav"; sourceTree = "<group>"; };
-		B772FCDD25E2E97700362E70 /* chill.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = chill.mp3; path = "../../../../untitled folder/chill.mp3"; sourceTree = "<group>"; };
-		B772FCDE25E2E97700362E70 /* techno.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = techno.wav; path = "../../../../untitled folder/techno.wav"; sourceTree = "<group>"; };
-		B772FCE725E2FECB00362E70 /* heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = heart.wav; path = "../../../../untitled folder/heart.wav"; sourceTree = "<group>"; };
+		B772FCF425E2FFEA00362E70 /* calm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = calm.wav; sourceTree = "<group>"; };
+		B772FCF525E2FFEA00362E70 /* chill.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chill.mp3; sourceTree = "<group>"; };
+		B772FCF625E2FFEA00362E70 /* techno.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = techno.wav; sourceTree = "<group>"; };
+		B772FCF725E2FFEA00362E70 /* heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heart.wav; sourceTree = "<group>"; };
 		C1042D3025E16A2E00EF63A2 /* FeelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingView.swift; sourceTree = "<group>"; };
 		C1042D4125E19E9900EF63A2 /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 		C1042D4625E19EE000EF63A2 /* Intend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intend.swift; sourceTree = "<group>"; };
@@ -227,10 +227,10 @@
 			isa = PBXGroup;
 			children = (
 				C1042D7225E1B33600EF63A2 /* Strings.swift */,
-				B772FCD825E2E93500362E70 /* calm.wav */,
-				B772FCDD25E2E97700362E70 /* chill.mp3 */,
-				B772FCE725E2FECB00362E70 /* heart.wav */,
-				B772FCDE25E2E97700362E70 /* techno.wav */,
+				B772FCF425E2FFEA00362E70 /* calm.wav */,
+				B772FCF525E2FFEA00362E70 /* chill.mp3 */,
+				B772FCF725E2FFEA00362E70 /* heart.wav */,
+				B772FCF625E2FFEA00362E70 /* techno.wav */,
 				C1042D7325E1B33600EF63A2 /* Assets.xcassets */,
 				C1042D7425E1B33600EF63A2 /* music_zapsplat_among_the_stars.mp3 */,
 			);
@@ -332,12 +332,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B772FCF825E2FFEA00362E70 /* calm.wav in Resources */,
+				B772FCFE25E2FFEA00362E70 /* heart.wav in Resources */,
 				C1042D7925E1B33600EF63A2 /* music_zapsplat_among_the_stars.mp3 in Resources */,
-				B772FCE825E2FECB00362E70 /* heart.wav in Resources */,
-				B772FCD925E2E93500362E70 /* calm.wav in Resources */,
-				B772FCE125E2E97700362E70 /* techno.wav in Resources */,
 				C1042D7725E1B33600EF63A2 /* Assets.xcassets in Resources */,
-				B772FCDF25E2E97700362E70 /* chill.mp3 in Resources */,
+				B772FCFA25E2FFEA00362E70 /* chill.mp3 in Resources */,
+				B772FCFC25E2FFEA00362E70 /* techno.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,12 +345,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B772FCF925E2FFEA00362E70 /* calm.wav in Resources */,
+				B772FCFF25E2FFEA00362E70 /* heart.wav in Resources */,
 				C1042D7A25E1B33600EF63A2 /* music_zapsplat_among_the_stars.mp3 in Resources */,
-				B772FCE925E2FECB00362E70 /* heart.wav in Resources */,
-				B772FCDA25E2E93500362E70 /* calm.wav in Resources */,
-				B772FCE225E2E97700362E70 /* techno.wav in Resources */,
 				C1042D7825E1B33600EF63A2 /* Assets.xcassets in Resources */,
-				B772FCE025E2E97700362E70 /* chill.mp3 in Resources */,
+				B772FCFB25E2FFEA00362E70 /* chill.mp3 in Resources */,
+				B772FCFD25E2FFEA00362E70 /* techno.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5P26NUF2Q4;
+				DEVELOPMENT_TEAM = 6R93PQD32F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -535,7 +535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.visualizer.Visualizer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.visualizer.Visualizer2;
 				PRODUCT_NAME = Visualizer;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -549,7 +549,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5P26NUF2Q4;
+				DEVELOPMENT_TEAM = 6R93PQD32F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -557,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.visualizer.Visualizer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.visualizer.Visualizer2;
 				PRODUCT_NAME = Visualizer;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;

@@ -105,7 +105,7 @@ struct MeditationView: View {
                 .opacity(didStart ? 0 : 1)
                 .animation(.easeIn)
             Text(Strings.yourExperienceIsAboutToStart)
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .fontWeight(.heavy)
                 .font(.system(size: 21))
                 .multilineTextAlignment(.center)

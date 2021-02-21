@@ -115,7 +115,7 @@ struct ShareView: View {
                     self.onDone?()
                     self.presentationMode.wrappedValue.dismiss()
                 }
-                .padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24))
+                .padding(EdgeInsets(top: 0, leading: 24, bottom: 16, trailing: 24))
                 .alert(isPresented: $showAlert) { () -> Alert in
                     Alert(title: Text(Strings.imageSaved), message: Text(""), dismissButton: .cancel())
                 }

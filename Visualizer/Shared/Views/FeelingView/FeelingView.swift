@@ -38,11 +38,9 @@ struct FeelingView: View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: gradientSecondLayer), startPoint: .top, endPoint: .bottom)
                 .opacity(self.isFirstLayer ? 0 : 1)
-                .animation(.spring())
 
             LinearGradient(gradient: Gradient(colors: gradientFirstLayer), startPoint: .top, endPoint: .bottom)
                 .opacity(self.isFirstLayer ? 1 : 0)
-                .animation(.spring())
 
             VStack {
                 Spacer()
@@ -89,7 +87,7 @@ struct FeelingView: View {
                         newStateIndex = max(currentStateIndex - 1, 0)
                     }
                     if newStateIndex != currentStateIndex {
-                        withAnimation(.linear(duration: 1)) {
+                        withAnimation(.easeIn(duration: 1)) {
                             currentStateIndex = newStateIndex
                             isFirstLayer.toggle()
                             setGradient(gradient: states[currentStateIndex].gradientColors)

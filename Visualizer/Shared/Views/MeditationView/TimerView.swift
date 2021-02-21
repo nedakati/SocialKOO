@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TimerView: View {
 
-    let animation: MoodAnimation
+    let animation: Intend
     let changeSpeed: () -> Void
     
     @State private var timeRemaining: Int = 0

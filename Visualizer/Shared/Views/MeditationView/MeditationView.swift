@@ -42,7 +42,7 @@ struct Polygon: View {
 
 struct MeditationView: View {
     
-    var mood: MoodAnimation
+    var intend: Intend
     let onSelectDone: (() -> Void)?
     
     @State private var scale: CGFloat = 1
@@ -54,8 +54,8 @@ struct MeditationView: View {
 
     private var audioPlayer: AVAudioPlayer?
     
-    init(mood: MoodAnimation, onSelectDone: (() -> Void)?) {
-        self.mood = mood
+    init(intend: Intend, onSelectDone: (() -> Void)?) {
+        self.intend = intend
         self.onSelectDone = onSelectDone
         if let path = Bundle.main.path(forResource: "music_zapsplat_among_the_stars", ofType: "mp3") {
             do {
@@ -68,13 +68,13 @@ struct MeditationView: View {
 
     var body: some View {
         ZStack {
-            GradientBackgroundView(colors: mood.gradients)
+            GradientBackgroundView(colors: intend.gradients)
                 .ignoresSafeArea()
             VStack(alignment: .center) {
                 HStack {
                     if didStart {
-                        TimerView(animation: mood) {
-                            if speed - 0.5 != mood.minMaxSpeed {
+                        TimerView(animation: intend) {
+                            if speed - 0.5 != intend.minMaxSpeed {
                                 speed -= 0.5
                             }
                         }
@@ -101,8 +101,8 @@ struct MeditationView: View {
                             .rotation3DEffect(.degrees(scale == 1 ? 180 : 45), axis: (x: 0, y: 0, z: 1))
                     }
                 }
-                .offset(x: offset.width, y: offset.height)
                 .scaleEffect(scalePolygon)
+                .offset(x: offset.width, y: offset.height)
                 .gesture(
                     DragGesture()
                         .onChanged { gesture in
@@ -117,6 +117,18 @@ struct MeditationView: View {
                                 self.scalePolygon = 1
                             }
                         }
+                )
+                .gesture(MagnificationGesture()
+                    .onChanged { value in
+                        withAnimation() {
+                            self.scalePolygon = value.magnitude
+                        }
+                    }
+                    .onEnded { _  in
+                        withAnimation(.interpolatingSpring(stiffness: 300, damping: 10)) {
+                            self.scalePolygon = 1
+                        }
+                    }
                 )
                 Spacer()
             }
@@ -138,7 +150,7 @@ struct MeditationView: View {
             playSound()
             speed = 100
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                speed = mood.defaultSpeed
+                speed = intend.defaultSpeed
                 didStart = true
             }
             let animation = Animation.easeInOut(duration: speed).repeatForever(autoreverses: true)
@@ -154,6 +166,5 @@ struct MeditationView: View {
     func playSound() {
         audioPlayer?.play()
         audioPlayer?.numberOfLoops = 3
-
     }
 }

@@ -7,19 +7,12 @@
 
 import SwiftUI
 
-enum MoodAnimation {
-    case chillOut
-    case moodBoost
-    case worrying
-    case mindDistraction
-}
-
-extension MoodAnimation {
+extension Intend {
     var mainColor: Color {
         switch self {
         case .chillOut: return .orange
         case .moodBoost: return .green
-        case .worrying: return .purple
+        case .stopWorrying: return .purple
         case .mindDistraction: return .blue
         }
     }
@@ -28,7 +21,7 @@ extension MoodAnimation {
         switch self {
         case .chillOut: return [Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))]
         case .moodBoost: return [Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))]
-        case .worrying: return [Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))]
+        case .stopWorrying: return [Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))]
         case .mindDistraction: return [Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))]
         }
     }
@@ -39,7 +32,7 @@ extension MoodAnimation {
         switch self {
         case .chillOut: return 3
         case .moodBoost: return 4
-        case .worrying: return 5
+        case .stopWorrying: return 5
         case .mindDistraction: return 5
         }
     }
@@ -48,20 +41,8 @@ extension MoodAnimation {
         switch self {
         case .chillOut: return 10
         case .moodBoost: return 10
-        case .worrying: return 10
+        case .stopWorrying: return 10
         case .mindDistraction: return 10
-        }
-    }
-}
-
-extension MoodAnimation {
-    init?(feeling: Feeling) {
-        switch feeling {
-        case .confused: self = .chillOut
-        case .grin: self = .chillOut
-        case .neutral: self = .chillOut
-        case .sob: self = .chillOut
-        case .star: self = .chillOut
         }
     }
 }

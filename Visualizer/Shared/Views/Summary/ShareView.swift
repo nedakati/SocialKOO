@@ -65,7 +65,6 @@ struct ShareView: View {
     
     @State private var geometry: GeometryProxy?
     @State private var showAlert = false
-    @State private var showShareSheet = false
     
     @Environment(\.presentationMode) private var presentationMode
     

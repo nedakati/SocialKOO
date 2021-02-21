@@ -18,7 +18,7 @@ struct RootView: View {
 
     var body: some View {
         if isMeditationViewVisible {
-            MeditationView(intend: .chillOut) {
+            MeditationView(intend: .stopWorrying) {
                 showingDetail.toggle()
             }
             .sheet(isPresented: $showingDetail) {

@@ -22,6 +22,7 @@ struct MeditationView: View {
     
     init(intend: Intend, onSelectDone: (() -> Void)?) {
         self.intend = intend
+        print("debug: intend \(intend)")
         self.onSelectDone = onSelectDone
         if let path = Bundle.main.path(forResource: "music_zapsplat_among_the_stars", ofType: "mp3") {
             do {

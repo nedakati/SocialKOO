@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ResultView: View {
-    
-    var intend: Intend
+
+    @Binding var intend: Intend
+    @Binding var fromFeeling: Feeling
+    @Binding var toFeeling: Feeling
     
     var body: some View {
         ZStack {
@@ -32,14 +34,14 @@ struct ResultView: View {
                     .font(.headline)
                     .foregroundColor(.black)
                 HStack {
-                        Image(Feeling.confused.image)
+                        Image(fromFeeling.image)
                             .resizable()
                             .scaledToFit()
                             .aspectRatio(1, contentMode: .fit)
                         Image(systemName: "arrow.right")
                             .foregroundColor(.black)
                             .font(.system(size: 20, weight: .bold))
-                        Image(Feeling.star.image)
+                        Image(toFeeling.image)
                             .resizable()
                             .scaledToFit()
                             .aspectRatio(1, contentMode: .fit)
@@ -60,19 +62,20 @@ struct ResultView: View {
 }
 
 struct ShareView: View {
-    
-    var intend: Intend
+
+    @Binding private var intend: Intend
+    @Binding private var fromFeeling: Feeling
+    @Binding private var toFeeling: Feeling
     
     @State private var geometry: GeometryProxy?
     @State private var showAlert = false
     
     @Environment(\.presentationMode) private var presentationMode
-    
-    private let resultView: ResultView
-    
-    init(intend: Intend) {
-        self.intend = intend
-        self.resultView = ResultView(intend: intend)
+
+    init(intend: Binding<Intend>, fromFeeling: Binding<Feeling>, toFeeling: Binding<Feeling>) {
+        _intend = intend
+        _fromFeeling = fromFeeling
+        _toFeeling = toFeeling
 
         UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
@@ -88,7 +91,7 @@ struct ShareView: View {
                     .ignoresSafeArea()
                 VStack {
                     GeometryReader { geometry in
-                        resultView
+                        ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling)
                             .cornerRadius(20)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
@@ -103,7 +106,7 @@ struct ShareView: View {
                     Spacer()
                     MainButton(title: Strings.saveToPhotoGallery) {
                         if let geometry = geometry {
-                            let screenshot = resultView.takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
+                            let screenshot = ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling).takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
                             
                             let imageSaver = ImageSaver()
 

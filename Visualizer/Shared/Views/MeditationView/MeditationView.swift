@@ -11,16 +11,17 @@ import AVFoundation
 struct MeditationView: View {
     
     private var intend: Intend
-    private let onSelectDone: (() -> Void)?
+    private let onSelectDone: ((Int) -> Void)?
     private var audioPlayer: AVAudioPlayer?
-
+    
+    @State private var time: Int = 0
     @State private var scale: CGFloat = 1
     @State private var scalePolygon: CGFloat = 1
     @State private var offset = CGSize.zero
     @State private var speed: TimeInterval = 0
     @State private var didStart = false
     
-    init(intend: Intend, onSelectDone: (() -> Void)?) {
+    init(intend: Intend, onSelectDone: ((Int) -> Void)?) {
         self.intend = intend
         print("debug: intend \(intend)")
         self.onSelectDone = onSelectDone
@@ -40,13 +41,13 @@ struct MeditationView: View {
             VStack(alignment: .center) {
                 HStack {
                     if didStart {
-                        TimerView(animation: intend) {
+                        TimerView(time: $time, animation: intend) {
                           updateSpeed()
                         }
                     }
                     Spacer()
                     Button(action: {
-                        onSelectDone?()
+                        onSelectDone?(time)
                     }) {
                         Text(Strings.imBetter)
                             .foregroundColor(.black)

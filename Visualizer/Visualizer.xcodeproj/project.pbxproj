@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A98C3BD125E2BEFB00D3501C /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98C3BD025E2BEFB00D3501C /* Polygon.swift */; };
+		A98C3BD225E2BEFB00D3501C /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98C3BD025E2BEFB00D3501C /* Polygon.swift */; };
 		A9B7000025E0284E00176027 /* VisualizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */; };
 		A9B7001D25E0357200176027 /* MoodAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7001C25E0357200176027 /* MoodAnimation.swift */; };
 		A9B7001E25E0357200176027 /* MoodAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7001C25E0357200176027 /* MoodAnimation.swift */; };
@@ -47,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A98C3BD025E2BEFB00D3501C /* Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
 		A9B7001C25E0357200176027 /* MoodAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodAnimation.swift; sourceTree = "<group>"; };
 		A9B7FFEC25E0284B00176027 /* VisualizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerApp.swift; sourceTree = "<group>"; };
 		A9B7FFF325E0284E00176027 /* Visualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +198,7 @@
 				A9D3006425E1AD520086CE70 /* TimerView.swift */,
 				A9D3006125E1AD520086CE70 /* PolygonShape.swift */,
 				A9D3006225E1AD520086CE70 /* GradientBackgroundView.swift */,
+				A98C3BD025E2BEFB00D3501C /* Polygon.swift */,
 			);
 			path = MeditationView;
 			sourceTree = "<group>";
@@ -353,6 +357,7 @@
 				A9D3005325E1A6330086CE70 /* MainButton.swift in Sources */,
 				C1B2128825E29844004730E9 /* StatedButton.swift in Sources */,
 				A9B7FFFF25E0284E00176027 /* VisualizerApp.swift in Sources */,
+				A98C3BD125E2BEFB00D3501C /* Polygon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +378,7 @@
 				A9B7001E25E0357200176027 /* MoodAnimation.swift in Sources */,
 				A9D3006825E1AD530086CE70 /* GradientBackgroundView.swift in Sources */,
 				A9D3006C25E1AD530086CE70 /* TimerView.swift in Sources */,
+				A98C3BD225E2BEFB00D3501C /* Polygon.swift in Sources */,
 				A9D3005425E1A6330086CE70 /* MainButton.swift in Sources */,
 				C1B2128925E29844004730E9 /* StatedButton.swift in Sources */,
 				A9B7000025E0284E00176027 /* VisualizerApp.swift in Sources */,

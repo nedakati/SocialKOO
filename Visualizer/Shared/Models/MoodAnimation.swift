@@ -8,12 +8,13 @@
 import SwiftUI
 
 extension Intend {
+
     var mainColor: Color {
         switch self {
-        case .chillOut: return .orange
-        case .moodBoost: return .green
-        case .stopWorrying: return .purple
-        case .mindDistraction: return .blue
+        case .chillOut: return Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))
+        case .moodBoost: return Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))
+        case .stopWorrying: return Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))
+        case .mindDistraction: return Color.random
         }
     }
     
@@ -26,14 +27,21 @@ extension Intend {
         }
     }
     
-    var defaultSpeed: TimeInterval { 5 }
+    var defaultSpeed: TimeInterval {
+        switch self {
+        case .chillOut: return 4
+        case .moodBoost: return 4
+        case .stopWorrying: return 4
+        case .mindDistraction: return 0.8
+        }
+    }
     
     var minMaxSpeed: TimeInterval {
         switch self {
-        case .chillOut: return 3
-        case .moodBoost: return 4
-        case .stopWorrying: return 5
-        case .mindDistraction: return 5
+        case .chillOut: return 4
+        case .moodBoost: return 0.5
+        case .stopWorrying: return 0.5
+        case .mindDistraction: return TimeInterval.random(in: 0.1...0.5)
         }
     }
     
@@ -42,7 +50,53 @@ extension Intend {
         case .chillOut: return 10
         case .moodBoost: return 10
         case .stopWorrying: return 10
+        case .mindDistraction: return 30
+        }
+    }
+    
+    var layers: Int {
+        switch self {
+        case .chillOut: return 10
+        case .moodBoost: return 40
+        case .stopWorrying: return 20
+        case .mindDistraction: return 40
+        }
+    }
+    
+    var polygonBaseSize: Int {
+        switch self {
+        case .chillOut: return 50
+        case .moodBoost: return 10
+        case .stopWorrying: return 20
         case .mindDistraction: return 10
         }
+    }
+    
+    var songTitle: String {
+        switch self {
+        case .chillOut: return "music_zapsplat_among_the_stars"
+        case .moodBoost: return "music_zapsplat_among_the_stars"
+        case .stopWorrying: return "music_zapsplat_among_the_stars"
+        case .mindDistraction: return "music_zapsplat_among_the_stars"
+        }
+    }
+    
+    var songType: String {
+        switch self {
+        case .chillOut: return "mp3"
+        case .moodBoost: return "mp3"
+        case .stopWorrying: return "mp3"
+        case .mindDistraction: return "mp3"
+        }
+    }
+}
+
+extension Color {
+    static var random: Color {
+        return Color(
+            red: .random(in: 0...1),
+            green: .random(in: 0...1),
+            blue: .random(in: 0...1)
+        )
     }
 }

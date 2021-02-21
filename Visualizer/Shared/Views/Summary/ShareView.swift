@@ -12,6 +12,7 @@ struct ResultView: View {
     @Binding var intend: Intend
     @Binding var fromFeeling: Feeling
     @Binding var toFeeling: Feeling
+    @Binding var timeText: String
     
     var body: some View {
         ZStack {
@@ -30,7 +31,7 @@ struct ResultView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
-                Text("For x mins")
+                Text(timeText)
                     .font(.headline)
                     .foregroundColor(.black)
                 HStack {
@@ -66,19 +67,23 @@ struct ShareView: View {
     @Binding private var intend: Intend
     @Binding private var fromFeeling: Feeling
     @Binding private var toFeeling: Feeling
-    
+    @Binding private var time: Int
+
     @State private var geometry: GeometryProxy?
     @State private var showAlert = false
-    @State private var showShareSheet = false
-    
+
     @Environment(\.presentationMode) private var presentationMode
+
+    @State private var timeText: String = ""
 
     var onDone: (() -> Void)?
 
-    init(intend: Binding<Intend>, fromFeeling: Binding<Feeling>, toFeeling: Binding<Feeling>, onDone: (() -> Void)?) {
+    init(intend: Binding<Intend>, fromFeeling: Binding<Feeling>, toFeeling: Binding<Feeling>, time: Binding<Int>, onDone: (() -> Void)?) {
         _intend = intend
         _fromFeeling = fromFeeling
         _toFeeling = toFeeling
+        _time = time
+
         self.onDone = onDone
 
         UINavigationBar.appearance().tintColor = .black
@@ -95,7 +100,7 @@ struct ShareView: View {
                     .ignoresSafeArea()
                 VStack {
                     GeometryReader { geometry in
-                        ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling)
+                        ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling, timeText: $timeText)
                             .cornerRadius(20)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
@@ -108,6 +113,7 @@ struct ShareView: View {
                     .padding()
                     .shadow(color: Color.black.opacity(0.3), radius: 16, x: 0, y: 16)
                     Spacer()
+
                     MainButton(title: Strings.done) {
                         self.onDone?()
                         self.presentationMode.wrappedValue.dismiss()
@@ -116,6 +122,16 @@ struct ShareView: View {
                     .alert(isPresented: $showAlert) { () -> Alert in
                         Alert(title: Text(Strings.imageSaved), message: Text(""), dismissButton: .cancel())
                     }
+                }
+            }
+            .onAppear {
+                let minutes = (time % 3600) / 60
+                let seconds = (time % 3600) % 60
+                
+                if minutes > 0 {
+                    timeText = "for \(minutes)m \(seconds)s"
+                } else {
+                    timeText = "for \(seconds)s"
                 }
             }
             .navigationBarTitle(Strings.overview, displayMode: .inline)
@@ -130,7 +146,7 @@ struct ShareView: View {
                                 trailing:
                                     Button(action: {
                                         if let geometry = geometry {
-                                            let screenshot = ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling).takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
+                                            let screenshot = ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling, timeText: $timeText).takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
 
                                             let imageSaver = ImageSaver()
 

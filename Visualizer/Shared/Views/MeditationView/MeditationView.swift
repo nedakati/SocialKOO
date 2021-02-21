@@ -53,6 +53,7 @@ struct MeditationView: View {
                     DragGesture()
                         .onChanged { gesture in
                             withAnimation(.interpolatingSpring(stiffness: 200, damping: 20)) {
+                                self.lightHapticFeedback()
                                 self.offset = gesture.translation
                                 self.scalePolygon = 0.3
                             }
@@ -67,6 +68,7 @@ struct MeditationView: View {
                 .gesture(MagnificationGesture()
                     .onChanged { value in
                         withAnimation() {
+                            self.simpleHapticFeedback()
                             self.scalePolygon = value.magnitude
                         }
                     }
@@ -150,5 +152,15 @@ struct MeditationView: View {
                 speed -= 0.5
             }
         }
+    }
+    
+    private func simpleHapticFeedback() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+    
+    private func lightHapticFeedback() {
+        let impactMed = UIImpactFeedbackGenerator(style: .soft)
+        impactMed.impactOccurred()
     }
 }

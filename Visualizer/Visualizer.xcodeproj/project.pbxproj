@@ -23,8 +23,8 @@
 		C1042D3225E16A2E00EF63A2 /* FeelingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D3025E16A2E00EF63A2 /* FeelingView.swift */; };
 		C1042D4225E19E9900EF63A2 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4125E19E9900EF63A2 /* Feeling.swift */; };
 		C1042D4325E19E9900EF63A2 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4125E19E9900EF63A2 /* Feeling.swift */; };
-		C1042D4725E19EE000EF63A2 /* Intends.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4625E19EE000EF63A2 /* Intends.swift */; };
-		C1042D4825E19EE000EF63A2 /* Intends.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4625E19EE000EF63A2 /* Intends.swift */; };
+		C1042D4725E19EE000EF63A2 /* Intend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4625E19EE000EF63A2 /* Intend.swift */; };
+		C1042D4825E19EE000EF63A2 /* Intend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D4625E19EE000EF63A2 /* Intend.swift */; };
 		C1042D7525E1B33600EF63A2 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D7225E1B33600EF63A2 /* Strings.swift */; };
 		C1042D7625E1B33600EF63A2 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D7225E1B33600EF63A2 /* Strings.swift */; };
 		C1042D7725E1B33600EF63A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1042D7325E1B33600EF63A2 /* Assets.xcassets */; };
@@ -39,6 +39,8 @@
 		C1042D9725E1C02200EF63A2 /* Extesions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D9525E1C02200EF63A2 /* Extesions.swift */; };
 		C1B2127725E25625004730E9 /* IntendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2127625E25625004730E9 /* IntendsView.swift */; };
 		C1B2127825E25625004730E9 /* IntendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2127625E25625004730E9 /* IntendsView.swift */; };
+		C1B2128825E29844004730E9 /* StatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2128725E29844004730E9 /* StatedButton.swift */; };
+		C1B2128925E29844004730E9 /* StatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2128725E29844004730E9 /* StatedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +57,7 @@
 		A9D3006425E1AD520086CE70 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		C1042D3025E16A2E00EF63A2 /* FeelingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingView.swift; sourceTree = "<group>"; };
 		C1042D4125E19E9900EF63A2 /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
-		C1042D4625E19EE000EF63A2 /* Intends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intends.swift; sourceTree = "<group>"; };
+		C1042D4625E19EE000EF63A2 /* Intend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intend.swift; sourceTree = "<group>"; };
 		C1042D7225E1B33600EF63A2 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		C1042D7325E1B33600EF63A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1042D7425E1B33600EF63A2 /* music_zapsplat_among_the_stars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_zapsplat_among_the_stars.mp3; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		C1042D8E25E1B3F400EF63A2 /* MeditationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		C1042D9525E1C02200EF63A2 /* Extesions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extesions.swift; sourceTree = "<group>"; };
 		C1B2127625E25625004730E9 /* IntendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntendsView.swift; sourceTree = "<group>"; };
+		C1B2128725E29844004730E9 /* StatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				C1042D4125E19E9900EF63A2 /* Feeling.swift */,
-				C1042D4625E19EE000EF63A2 /* Intends.swift */,
+				C1042D4625E19EE000EF63A2 /* Intend.swift */,
 				A9B7001C25E0357200176027 /* MoodAnimation.swift */,
 			);
 			path = Models;
@@ -194,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				A9D3005225E1A6330086CE70 /* MainButton.swift */,
+				C1B2128725E29844004730E9 /* StatedButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -298,7 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1042D9625E1C02200EF63A2 /* Extesions.swift in Sources */,
-				C1042D4725E19EE000EF63A2 /* Intends.swift in Sources */,
+				C1042D4725E19EE000EF63A2 /* Intend.swift in Sources */,
 				A9B7001D25E0357200176027 /* MoodAnimation.swift in Sources */,
 				C1042D7525E1B33600EF63A2 /* Strings.swift in Sources */,
 				C1042D8625E1B3DC00EF63A2 /* RootView.swift in Sources */,
@@ -311,6 +315,7 @@
 				A9D3006725E1AD530086CE70 /* GradientBackgroundView.swift in Sources */,
 				A9D3006B25E1AD530086CE70 /* TimerView.swift in Sources */,
 				A9D3005325E1A6330086CE70 /* MainButton.swift in Sources */,
+				C1B2128825E29844004730E9 /* StatedButton.swift in Sources */,
 				A9B7FFFF25E0284E00176027 /* VisualizerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,7 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1042D9725E1C02200EF63A2 /* Extesions.swift in Sources */,
-				C1042D4825E19EE000EF63A2 /* Intends.swift in Sources */,
+				C1042D4825E19EE000EF63A2 /* Intend.swift in Sources */,
 				A9B7001E25E0357200176027 /* MoodAnimation.swift in Sources */,
 				C1042D7625E1B33600EF63A2 /* Strings.swift in Sources */,
 				C1042D8725E1B3DC00EF63A2 /* RootView.swift in Sources */,
@@ -333,6 +338,7 @@
 				A9D3006825E1AD530086CE70 /* GradientBackgroundView.swift in Sources */,
 				A9D3006C25E1AD530086CE70 /* TimerView.swift in Sources */,
 				A9D3005425E1A6330086CE70 /* MainButton.swift in Sources */,
+				C1B2128925E29844004730E9 /* StatedButton.swift in Sources */,
 				A9B7000025E0284E00176027 /* VisualizerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

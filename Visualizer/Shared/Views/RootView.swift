@@ -23,10 +23,10 @@ struct RootView: View {
                 withAnimation(.linear(duration: 0.33)) {
                     isFeelingViewVisible.toggle()
                 }
+            }, onSelectIntend: { intend in
+                print("debug: intend: \(intend) ;; currentFeeling: currentFeeling\(currentFeeling)")
+                isMeditationViewVisible.toggle()
             })
-                .onTapGesture {
-                    isMeditationViewVisible.toggle()
-                }
         } else {
             FeelingView(with: currentFeeling, transitionNamespace: animation, onSelectDone: { feeling in
                 currentFeeling = feeling

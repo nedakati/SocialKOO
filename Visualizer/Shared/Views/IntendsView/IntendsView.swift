@@ -91,7 +91,7 @@ struct IntendsView: View {
 
 // MARK: - Intend
 
-private extension Intend {
+extension Intend {
     var imageName: String {
         switch self {
         case .chillOut: return "Moods/chillOut"

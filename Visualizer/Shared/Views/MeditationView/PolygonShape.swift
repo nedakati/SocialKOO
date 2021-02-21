@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PolygonShape: Shape {
     
-    var sides: Double
+    private var sides: Double
     
     // MARK: - Override this computed property, since Shape is conforms to Animatable
     var animatableData: Double {

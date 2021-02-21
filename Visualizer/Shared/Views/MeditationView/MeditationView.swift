@@ -42,17 +42,15 @@ struct Polygon: View {
 
 struct MeditationView: View {
     
-    var intend: Intend
-    let onSelectDone: (() -> Void)?
-    
+    private var intend: Intend
+    private let onSelectDone: (() -> Void)?
+    private var audioPlayer: AVAudioPlayer?
+
     @State private var scale: CGFloat = 1
     @State private var scalePolygon: CGFloat = 1
     @State private var offset = CGSize.zero
-    
     @State private var speed: TimeInterval = 0
     @State private var didStart = false
-
-    private var audioPlayer: AVAudioPlayer?
     
     init(intend: Intend, onSelectDone: (() -> Void)?) {
         self.intend = intend

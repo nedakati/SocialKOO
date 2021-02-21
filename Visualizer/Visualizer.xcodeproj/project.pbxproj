@@ -100,6 +100,7 @@
 				C1B2127525E2560F004730E9 /* IntendsView */,
 				C1042D2F25E16A1800EF63A2 /* FeelingView */,
 				C1042D2E25E16A0D00EF63A2 /* MeditationView */,
+				C1B2128225E267E1004730E9 /* Buttons */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				C1042D8E25E1B3F400EF63A2 /* MeditationView.swift */,
-				A9D3005225E1A6330086CE70 /* MainButton.swift */,
 				A9D3006425E1AD520086CE70 /* TimerView.swift */,
 				A9D3006125E1AD520086CE70 /* PolygonShape.swift */,
 				A9D3006225E1AD520086CE70 /* GradientBackgroundView.swift */,
@@ -188,6 +188,14 @@
 				C1B2127625E25625004730E9 /* IntendsView.swift */,
 			);
 			path = IntendsView;
+			sourceTree = "<group>";
+		};
+		C1B2128225E267E1004730E9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A9D3005225E1A6330086CE70 /* MainButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

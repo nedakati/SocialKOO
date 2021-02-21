@@ -9,20 +9,30 @@ import SwiftUI
 
 struct RootView: View {
     @State private var isMeditationViewVisible = false
-    @State private var feeling: Feeling?
+    @State private var isFeelingViewVisible = false
+    @State private var currentFeeling: Feeling = .neutral
+
+    @Namespace private var animation
 
     var body: some View {
         if isMeditationViewVisible {
             MeditationView(mood: .chillOut)
                 .transition(.opacity)
-        } else if let feeling = feeling {
-            IntendsView(feeling: feeling)
+        } else if isFeelingViewVisible {
+            IntendsView(feeling: $currentFeeling, transitionNamespace: animation, onSelectBack: {
+                withAnimation(.linear(duration: 0.33)) {
+                    isFeelingViewVisible.toggle()
+                }
+            })
                 .onTapGesture {
                     isMeditationViewVisible.toggle()
                 }
         } else {
-            FeelingView(onSelectDone: { feeling in
-                self.feeling = feeling
+            FeelingView(with: currentFeeling, transitionNamespace: animation, onSelectDone: { feeling in
+                currentFeeling = feeling
+                withAnimation(.interpolatingSpring(stiffness: 100, damping: 13)) {
+                    isFeelingViewVisible.toggle()
+                }
             })
         }
     }

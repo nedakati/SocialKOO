@@ -21,9 +21,9 @@ struct TimerView: View {
     var body: some View {
         VStack {
             Text("\(minutes):\(formarSeconds(seconds))")
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .fontWeight(.heavy)
-                .font(.largeTitle)
+                .font(.title2)
                 .onReceive(timer) { _ in
                     timeRemaining += 1
                     seconds += 1

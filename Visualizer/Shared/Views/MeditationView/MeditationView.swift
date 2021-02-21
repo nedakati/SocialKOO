@@ -70,11 +70,25 @@ struct MeditationView: View {
             VStack(alignment: .center) {
                 HStack {
                     TimerView(animation: mood) {
-                        speed -= 0.5
+                        if speed - 0.5 != mood.minMaxSpeed {
+                            speed -= 0.5
+                        }
                     }
                     Spacer()
+                    Button(action: {
+                        // What to perform
+                    }) {
+                        Text(Strings.imBetter)
+                            .foregroundColor(.black)
+                            .fontWeight(.semibold)
+                            .font(.body)
+                    }
+                    .frame(width: 120, height: 30)
+                    .background(Color.white.opacity(0.5))
+                    .cornerRadius(24)
+                    .shadow(color: Color.black.opacity(0.16), radius: 16, x: 0, y: 16)
                 }
-                .padding(EdgeInsets(top: 24, leading: 48, bottom: 24, trailing: 24))
+                .padding(EdgeInsets(top: 24, leading: 48, bottom: 24, trailing: 48))
                 ZStack {
                     ForEach(1 ..< 10) { number in
                         Polygon(width: CGFloat(50 * number), height: CGFloat(50 * number), speed: speed)
@@ -113,11 +127,6 @@ struct MeditationView: View {
                         .font(.largeTitle)
                         .animation(.easeInOut(duration: mood.defaultSpeed))
                 }
-                MainButton(title: "Tap me") {
-                    
-                }
-                .padding(.top, 16)
-                .padding(.horizontal, 32)
             }
             Spacer()
         }

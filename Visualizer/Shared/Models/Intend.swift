@@ -11,5 +11,5 @@ enum Intend {
     case chillOut
     case moodBoost
     case stopWorrying
-    case relievePain
+    case mindDistraction
 }

@@ -11,10 +11,9 @@ struct SummaryView: View {
     
     @Environment(\.presentationMode) private var presentationMode
 
-    var mood: MoodAnimation
+    var mood: Intend
 
-    
-    init(mood: MoodAnimation) {
+    init(mood: Intend) {
         self.mood = mood
     
         UINavigationBar.appearance().tintColor = .black
@@ -56,7 +55,7 @@ struct SummaryView: View {
                                         .scaledToFit()
                                         .aspectRatio(1, contentMode: .fit)
                             }
-                            NavigationLink(destination: ShareView(mood: mood)) {
+                            NavigationLink(destination: ShareView(intend: mood)) {
                                 Text("Share")
                                     .font(.system(size: 20, weight: .regular))
                                     .frame(width: 100, height: 48)

@@ -18,11 +18,11 @@ struct RootView: View {
 
     var body: some View {
         if isMeditationViewVisible {
-            MeditationView(mood: .chillOut) {
+            MeditationView(intend: .chillOut) {
                 showingDetail.toggle()
             }
             .sheet(isPresented: $showingDetail) {
-                ShareView(mood: .chillOut)
+                ShareView(intend: .chillOut)
             }
             .transition(.opacity)
         } else if isFeelingViewVisible {

@@ -42,7 +42,7 @@ struct Polygon: View {
 
 struct MeditationView: View {
     
-    var mood: MoodAnimation
+    var intend: Intend
     let onSelectDone: (() -> Void)?
     
     @State private var scale: CGFloat = 1
@@ -50,11 +50,12 @@ struct MeditationView: View {
     @State private var offset = CGSize.zero
     
     @State private var speed: TimeInterval = 0
+    @State private var didStart = false
 
     private var audioPlayer: AVAudioPlayer?
     
-    init(mood: MoodAnimation, onSelectDone: (() -> Void)?) {
-        self.mood = mood
+    init(intend: Intend, onSelectDone: (() -> Void)?) {
+        self.intend = intend
         self.onSelectDone = onSelectDone
         if let path = Bundle.main.path(forResource: "music_zapsplat_among_the_stars", ofType: "mp3") {
             do {
@@ -67,13 +68,15 @@ struct MeditationView: View {
 
     var body: some View {
         ZStack {
-            GradientBackgroundView(colors: mood.gradients)
+            GradientBackgroundView(colors: intend.gradients)
                 .ignoresSafeArea()
             VStack(alignment: .center) {
                 HStack {
-                    TimerView(animation: mood) {
-                        if speed - 0.5 != mood.minMaxSpeed {
-                            speed -= 0.5
+                    if didStart {
+                        TimerView(animation: intend) {
+                            if speed - 0.5 != intend.minMaxSpeed {
+                                speed -= 0.5
+                            }
                         }
                     }
                     Spacer()
@@ -128,35 +131,40 @@ struct MeditationView: View {
                     }
                 )
                 Spacer()
-                if scale == 1 {
-                    Text("Breathe in")
-                        .foregroundColor(.white)
-                        .fontWeight(.heavy)
-                        .font(.largeTitle)
-                        .animation(.easeInOut(duration: mood.defaultSpeed))
-                } else {
-                    Text("Breathe out")
-                        .foregroundColor(.white)
-                        .fontWeight(.heavy)
-                        .font(.largeTitle)
-                        .animation(.easeInOut(duration: mood.defaultSpeed))
-                }
             }
-            Spacer()
+            .blur(radius: didStart ? 0 : 40)
+            GradientBackgroundView(colors: [Color.white.opacity(0.3)])
+                .ignoresSafeArea()
+                .opacity(didStart ? 0 : 1)
+                .animation(.easeIn)
+            Text(Strings.yourExperienceIsAboutToStart)
+                .foregroundColor(.white)
+                .fontWeight(.heavy)
+                .font(.system(size: 21))
+                .multilineTextAlignment(.center)
+                .padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24))
+                .opacity(didStart ? 0 : 1)
+                .animation(.easeIn)
         }
         .onAppear {
             playSound()
-            speed = mood.defaultSpeed
+            speed = 100
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                speed = intend.defaultSpeed
+                didStart = true
+            }
             let animation = Animation.easeInOut(duration: speed).repeatForever(autoreverses: true)
             withAnimation(animation) {
                 scale = 0.5
             }
+        }
+        .onDisappear {
+            audioPlayer?.stop()
         }
     }
     
     func playSound() {
         audioPlayer?.play()
         audioPlayer?.numberOfLoops = 3
-
     }
 }

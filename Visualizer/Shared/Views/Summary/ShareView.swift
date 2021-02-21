@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ResultView: View {
     
+    var intend: Intend
+    
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: MoodAnimation.chillOut.gradients), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: intend.gradients), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
         ZStack {
             Color(.white)
@@ -59,7 +61,7 @@ struct ResultView: View {
 
 struct ShareView: View {
     
-    var mood: MoodAnimation
+    var intend: Intend
     
     @State private var geometry: GeometryProxy?
     @State private var showAlert = false
@@ -67,11 +69,12 @@ struct ShareView: View {
     
     @Environment(\.presentationMode) private var presentationMode
     
-    private let view = ResultView()
+    private let resultView: ResultView
     
-    init(mood: MoodAnimation) {
-        self.mood = mood
-    
+    init(intend: Intend) {
+        self.intend = intend
+        self.resultView = ResultView(intend: intend)
+
         UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
         UINavigationBar.appearance().barTintColor = .clear
@@ -86,7 +89,7 @@ struct ShareView: View {
                     .ignoresSafeArea()
                 VStack {
                     GeometryReader { geometry in
-                        view
+                        resultView
                             .cornerRadius(20)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
@@ -101,7 +104,7 @@ struct ShareView: View {
                     Spacer()
                     MainButton(title: Strings.saveToPhotoGallery) {
                         if let geometry = geometry {
-                            let screenshot = view.takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
+                            let screenshot = resultView.takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
                             
                             let imageSaver = ImageSaver()
 

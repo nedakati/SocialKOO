@@ -106,6 +106,7 @@ struct ShareView: View {
                             UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil)
                         }
                     }
+                    .padding(EdgeInsets(top: 0, leading: 24, bottom: 24, trailing: 24))
                 }
             }
             .navigationBarTitle(Strings.overview, displayMode: .inline)

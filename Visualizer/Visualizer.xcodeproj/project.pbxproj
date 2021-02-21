@@ -40,6 +40,8 @@
 		C1042D9025E1B3F400EF63A2 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D8E25E1B3F400EF63A2 /* MeditationView.swift */; };
 		C1042D9625E1C02200EF63A2 /* Extesions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D9525E1C02200EF63A2 /* Extesions.swift */; };
 		C1042D9725E1C02200EF63A2 /* Extesions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1042D9525E1C02200EF63A2 /* Extesions.swift */; };
+		C1B2127725E25625004730E9 /* IntendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2127625E25625004730E9 /* IntendsView.swift */; };
+		C1B2127825E25625004730E9 /* IntendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2127625E25625004730E9 /* IntendsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,7 @@
 		C1042D8525E1B3DC00EF63A2 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C1042D8E25E1B3F400EF63A2 /* MeditationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		C1042D9525E1C02200EF63A2 /* Extesions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extesions.swift; sourceTree = "<group>"; };
+		C1B2127625E25625004730E9 /* IntendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntendsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				C1042D8525E1B3DC00EF63A2 /* RootView.swift */,
+				C1B2127525E2560F004730E9 /* IntendsView */,
 				C1042D2F25E16A1800EF63A2 /* FeelingView */,
 				A9D3008D25E257CA0086CE70 /* Summary */,
 				C1042D2E25E16A0D00EF63A2 /* MeditationView */,
+				C1B2128225E267E1004730E9 /* Buttons */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				C1042D8E25E1B3F400EF63A2 /* MeditationView.swift */,
-				A9D3005225E1A6330086CE70 /* MainButton.swift */,
 				A9D3006425E1AD520086CE70 /* TimerView.swift */,
 				A9D3006125E1AD520086CE70 /* PolygonShape.swift */,
 				A9D3006225E1AD520086CE70 /* GradientBackgroundView.swift */,
@@ -201,6 +205,22 @@
 				C1042D9525E1C02200EF63A2 /* Extesions.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C1B2127525E2560F004730E9 /* IntendsView */ = {
+			isa = PBXGroup;
+			children = (
+				C1B2127625E25625004730E9 /* IntendsView.swift */,
+			);
+			path = IntendsView;
+			sourceTree = "<group>";
+		};
+		C1B2128225E267E1004730E9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A9D3005225E1A6330086CE70 /* MainButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +332,7 @@
 				C1042D4225E19E9900EF63A2 /* Feeling.swift in Sources */,
 				C1042D3125E16A2E00EF63A2 /* FeelingView.swift in Sources */,
 				C1042D8F25E1B3F400EF63A2 /* MeditationView.swift in Sources */,
+				C1B2127725E25625004730E9 /* IntendsView.swift in Sources */,
 				A9D3006525E1AD530086CE70 /* PolygonShape.swift in Sources */,
 				A9B7001D25E0357200176027 /* MoodAnimation.swift in Sources */,
 				A9D3009325E26E0E0086CE70 /* Extensions.swift in Sources */,
@@ -334,6 +355,7 @@
 				C1042D4325E19E9900EF63A2 /* Feeling.swift in Sources */,
 				C1042D3225E16A2E00EF63A2 /* FeelingView.swift in Sources */,
 				C1042D9025E1B3F400EF63A2 /* MeditationView.swift in Sources */,
+				C1B2127825E25625004730E9 /* IntendsView.swift in Sources */,
 				A9D3006625E1AD530086CE70 /* PolygonShape.swift in Sources */,
 				A9B7001E25E0357200176027 /* MoodAnimation.swift in Sources */,
 				A9D3006825E1AD530086CE70 /* GradientBackgroundView.swift in Sources */,

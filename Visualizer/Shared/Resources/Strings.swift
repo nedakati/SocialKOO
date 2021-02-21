@@ -13,7 +13,7 @@ enum Strings {
     static let howAreYouFeelingNow = "Let's check \n your mood again"
     static let whatDoYouWantToAchieve = "What do you want \n to achieve?"
     static let swipeUpAndDown = "Swipe up and down to select \n your mood."
-    static let imBetter = "I'm better"
+    static let imBetter = "Done"
     static let chillOut = "chill out"
     static let moodBoost = "boost my mood"
     static let stopWorrying = "stop worrying"
@@ -23,6 +23,6 @@ enum Strings {
     static let iHaveTried = "I've tried"
     static let tryItYourself = "Try it yourself!"
     static let overview = "Overview"
-    static let yourExperienceIsAboutToStart = "Your experience is about to start"
-    static let imageSaved = "Image saved!"
+    static let yourExperienceIsAboutToStart = "Preparing your experience..."
+    static let imageSaved = "Saved to camera roll!"
 }

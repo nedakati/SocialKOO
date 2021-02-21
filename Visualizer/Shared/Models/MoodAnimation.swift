@@ -53,3 +53,15 @@ extension MoodAnimation {
         }
     }
 }
+
+extension MoodAnimation {
+    init?(feeling: Feeling) {
+        switch feeling {
+        case .confused: self = .chillOut
+        case .grin: self = .chillOut
+        case .neutral: self = .chillOut
+        case .sob: self = .chillOut
+        case .star: self = .chillOut
+        }
+    }
+}

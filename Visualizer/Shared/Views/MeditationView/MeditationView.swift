@@ -117,7 +117,7 @@ struct MeditationView: View {
         .onAppear {
             playSound()
             speed = 100
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 speed = intend.defaultSpeed
                 didStart = true
             }

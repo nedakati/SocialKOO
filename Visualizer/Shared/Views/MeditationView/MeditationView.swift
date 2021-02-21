@@ -46,6 +46,7 @@ struct MeditationView: View {
                             .foregroundColor(intend.mainColor)
                     }
                 }
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 24)
                 .scaleEffect(scalePolygon)
                 .offset(x: offset.width, y: offset.height)
                 .gesture(

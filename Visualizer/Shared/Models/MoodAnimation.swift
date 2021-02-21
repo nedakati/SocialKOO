@@ -59,7 +59,7 @@ extension Intend {
         case .chillOut: return 10
         case .moodBoost: return 40
         case .stopWorrying: return 20
-        case .mindDistraction: return 45
+        case .mindDistraction: return 20
         }
     }
     
@@ -68,7 +68,7 @@ extension Intend {
         case .chillOut: return 50
         case .moodBoost: return 10
         case .stopWorrying: return 20
-        case .mindDistraction: return 10
+        case .mindDistraction: return 50
         }
     }
     

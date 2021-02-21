@@ -27,6 +27,9 @@ struct IntendsView: View {
                         .matchedGeometryEffect(id: "ImageAnimation", in: transitionNamespace)
                         .frame(width: 160, height: 160)
                         .padding(.top, 16)
+                        .onTapGesture {
+                            onSelectBack()
+                        }
 
                     Text(Strings.whatDoYouWantToAchieve)
                         .font(.system(size: 34, weight: .bold))

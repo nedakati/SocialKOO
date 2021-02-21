@@ -14,11 +14,11 @@ struct MainButton: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .foregroundColor(Color.systemBackground)
+                .foregroundColor(Color.white)
                 .padding(.horizontal, 24)
                 .frame(maxWidth: .infinity)
                 .frame(height: 48)
-                .background(Color.primary)
+                .background(Color.black)
                 .cornerRadius(24)
                 .shadow(color: Color.black.opacity(0.5), radius: 24, x: 0, y: 16)
         }

@@ -25,10 +25,12 @@ struct RootView: View {
         if isMeditationViewVisible {
             MeditationView(intend: currentIntend) { time in
                 self.time = time
-        
-                isFeelingViewVisible.toggle()
-                isMeditationViewVisible.toggle()
-                isReviewViewVisible.toggle()
+
+                withAnimation(.linear(duration: 0.33)) {
+                    isFeelingViewVisible.toggle()
+                    isMeditationViewVisible.toggle()
+                    isReviewViewVisible.toggle()
+                }
             }
             .transition(.opacity)
         } else if isFeelingViewVisible {
@@ -38,7 +40,9 @@ struct RootView: View {
                 }
             }, onSelectIntend: { intend in
                 currentIntend = intend
-                isMeditationViewVisible.toggle()
+                withAnimation(.linear(duration: 0.33)) {
+                    isMeditationViewVisible.toggle()
+                }
             })
         } else if isReviewViewVisible {
             FeelingView(with: currentFeeling,

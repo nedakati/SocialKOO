@@ -116,6 +116,8 @@ struct MeditationView: View {
                 MainButton(title: "Tap me") {
                     
                 }
+                .padding(.top, 16)
+                .padding(.horizontal, 32)
             }
             Spacer()
         }

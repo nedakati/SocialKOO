@@ -13,7 +13,9 @@ struct FeelingView: View {
 
     @State private var isFirstLayer = true
 
-    let onSelectDone: (() -> Void)?
+    @Namespace private var imageAnimation
+
+    let onSelectDone: ((Feeling) -> Void)?
 
     var body: some View {
         ZStack {
@@ -38,13 +40,14 @@ struct FeelingView: View {
                         .aspectRatio(contentMode: .fit)
                         .opacity(self.isFirstLayer ? 0 : 1)
                         .animation(.easeIn(duration: 0.33))
+                        .matchedGeometryEffect(id: "ImageAnimation", in: imageAnimation)
 
                     imageFirstLayer
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .opacity(self.isFirstLayer ? 1 : 0)
                         .animation(.easeIn(duration: 0.33))
-
+                        .matchedGeometryEffect(id: "ImageAnimation", in: imageAnimation)
                 }
 
                 Text(Strings.swipeUpAndDown)
@@ -53,10 +56,12 @@ struct FeelingView: View {
 
                 Spacer()
 
-                MainButton(title: "Done") {
-                    onSelectDone?()
+                MainButton(title: Strings.done) {
+                    withAnimation {
+                        onSelectDone?(states[currentStateIndex])
+                    }
                 }
-                .padding(.bottom)
+                .padding(32)
             }
         }
         .gesture(
@@ -117,7 +122,7 @@ struct MoodView_Previews: PreviewProvider {
     }
 }
 
-private extension Feeling {
+extension Feeling {
     var image: String {
         switch self {
         case .sob: return "Moods/sob"

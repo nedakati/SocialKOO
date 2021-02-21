@@ -10,19 +10,20 @@ import SwiftUI
 struct RootView: View {
     
     @State private var isMeditationViewVisible = false
-    @State private var showingDetail = false
+    @State private var isMeditationCompleted = false
+    @State private var reviewCompeted = false
     @State private var isFeelingViewVisible = false
     @State private var currentFeeling: Feeling = .neutral
+    @State private var afterFeeling: Feeling = .neutral
 
     @Namespace private var animation
 
     var body: some View {
         if isMeditationViewVisible {
             MeditationView(mood: .chillOut) {
-                showingDetail.toggle()
-            }
-            .sheet(isPresented: $showingDetail) {
-                ShareView(mood: .chillOut)
+                isFeelingViewVisible.toggle()
+                isMeditationViewVisible.toggle()
+                isMeditationCompleted.toggle()
             }
             .transition(.opacity)
         } else if isFeelingViewVisible {
@@ -31,16 +32,23 @@ struct RootView: View {
                     isFeelingViewVisible.toggle()
                 }
             }, onSelectIntend: { intend in
-                print("debug: intend: \(intend) ;; currentFeeling: currentFeeling\(currentFeeling)")
                 isMeditationViewVisible.toggle()
             })
         } else {
             FeelingView(with: currentFeeling, transitionNamespace: animation, onSelectDone: { feeling in
-                currentFeeling = feeling
-                withAnimation(.interpolatingSpring(stiffness: 100, damping: 13)) {
-                    isFeelingViewVisible.toggle()
+                if isMeditationCompleted {
+                    afterFeeling = feeling
+                    reviewCompeted.toggle()
+                } else {
+                    currentFeeling = feeling
+                    withAnimation(.interpolatingSpring(stiffness: 100, damping: 13)) {
+                        isFeelingViewVisible.toggle()
+                    }
                 }
             })
+            .sheet(isPresented: $reviewCompeted) {
+                ShareView(mood: .constant(.chillOut), fromFeeling: $currentFeeling, toFeeling: $afterFeeling)
+            }
         }
     }
 }

@@ -20,10 +20,12 @@ struct FeelingView: View {
     init(with feeling: Feeling, transitionNamespace: Namespace.ID, onSelectDone: ((Feeling) -> Void)?) {
         self.transitionNamespace = transitionNamespace
         self.onSelectDone = onSelectDone
+        
         let stateIndex = states.firstIndex { $0 == feeling } ?? 2
         _currentStateIndex = State(initialValue: stateIndex)
         _gradientFirstLayer = State(initialValue: feeling.gradientColors)
         _gradientSecondLayer = State(initialValue: feeling.gradientColors)
+
         _imageFirstLayer = State(initialValue: Image(feeling.image))
         _imageSecondLayer = State(initialValue: Image(feeling.image))
     }
@@ -33,14 +35,18 @@ struct FeelingView: View {
             LinearGradient(gradient: Gradient(colors: gradientSecondLayer), startPoint: .top, endPoint: .bottom)
                 .opacity(self.isFirstLayer ? 0 : 1)
                 .animation(.spring())
+
             LinearGradient(gradient: Gradient(colors: gradientFirstLayer), startPoint: .top, endPoint: .bottom)
                 .opacity(self.isFirstLayer ? 1 : 0)
                 .animation(.spring())
+
             VStack {
                 Spacer()
+
                 Text(Strings.howAreYouFeeling)
                     .font(.system(size: 34, weight: .bold))
                     .multilineTextAlignment(.center)
+
                 ZStack {
                     imageSecondLayer
                         .resizable()
@@ -54,10 +60,13 @@ struct FeelingView: View {
                         .animation(.easeIn(duration: 0.33))
                 }
                 .matchedGeometryEffect(id: "ImageAnimation", in: transitionNamespace)
+
                 Text(Strings.swipeUpAndDown)
                     .font(.system(size: 16, weight: .medium))
                     .multilineTextAlignment(.center)
+
                 Spacer()
+                
                 MainButton(title: Strings.done) {
                     onSelectDone?(states[currentStateIndex])
                 }

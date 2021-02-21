@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ResultView: View {
+
+    @Binding var mood: MoodAnimation
+    @Binding var fromFeeling: Feeling
+    @Binding var toFeeling: Feeling
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: MoodAnimation.chillOut.gradients), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: mood.gradients), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
         ZStack {
             Color(.white)
@@ -30,14 +34,14 @@ struct ResultView: View {
                     .font(.headline)
                     .foregroundColor(.black)
                 HStack {
-                        Image(Feeling.confused.image)
+                        Image(fromFeeling.image)
                             .resizable()
                             .scaledToFit()
                             .aspectRatio(1, contentMode: .fit)
                         Image(systemName: "arrow.right")
                             .foregroundColor(.black)
                             .font(.system(size: 20, weight: .bold))
-                        Image(Feeling.star.image)
+                        Image(toFeeling.image)
                             .resizable()
                             .scaledToFit()
                             .aspectRatio(1, contentMode: .fit)
@@ -59,7 +63,9 @@ struct ResultView: View {
 
 struct ShareView: View {
     
-    var mood: MoodAnimation
+    @Binding private var mood: MoodAnimation
+    @Binding private var fromFeeling: Feeling
+    @Binding private var toFeeling: Feeling
     
     @State private var geometry: GeometryProxy?
     @State private var showAlert = false
@@ -67,11 +73,11 @@ struct ShareView: View {
     
     @Environment(\.presentationMode) private var presentationMode
     
-    private let view = ResultView()
-    
-    init(mood: MoodAnimation) {
-        self.mood = mood
-    
+    init(mood: Binding<MoodAnimation>, fromFeeling: Binding<Feeling>, toFeeling: Binding<Feeling>) {
+        _mood = mood
+        _fromFeeling = fromFeeling
+        _toFeeling = toFeeling
+
         UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
         UINavigationBar.appearance().barTintColor = .clear
@@ -86,7 +92,7 @@ struct ShareView: View {
                     .ignoresSafeArea()
                 VStack {
                     GeometryReader { geometry in
-                        view
+                        ResultView(mood: $mood, fromFeeling: $fromFeeling, toFeeling: $toFeeling)
                             .cornerRadius(20)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
@@ -101,7 +107,7 @@ struct ShareView: View {
                     Spacer()
                     MainButton(title: Strings.saveToPhotoGallery) {
                         if let geometry = geometry {
-                            let screenshot = view.takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
+                            let screenshot = ResultView(mood: $mood, fromFeeling: $fromFeeling, toFeeling: $toFeeling).takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
                             
                             let imageSaver = ImageSaver()
 

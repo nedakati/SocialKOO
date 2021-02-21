@@ -67,6 +67,7 @@ struct MeditationView: View {
                 .gesture(MagnificationGesture()
                     .onChanged { value in
                         withAnimation() {
+                            self.simpleHapticFeedback()
                             self.scalePolygon = value.magnitude
                         }
                     }
@@ -91,16 +92,17 @@ struct MeditationView: View {
                                 .foregroundColor(.black)
                                 .fontWeight(.semibold)
                                 .font(.body)
+                                .frame(width: 120, height: 30)
+                                .background(Color.white.opacity(0.5))
+                                .cornerRadius(24)
                         }
-                        .frame(width: 120, height: 30)
-                        .background(Color.white.opacity(0.5))
-                        .cornerRadius(24)
                         .shadow(color: Color.black.opacity(0.16), radius: 16, x: 0, y: 16)
                     }
-                    .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
+                    .padding(EdgeInsets(top: 32, leading: 24, bottom: 24, trailing: 24))
                     Spacer()
                 }
             }
+            .blur(radius: didStart ? 0 : 10)
             GradientBackgroundView(colors: [Color.white.opacity(0.3)])
                 .ignoresSafeArea()
                 .opacity(didStart ? 0 : 1)
@@ -149,5 +151,10 @@ struct MeditationView: View {
                 speed -= 0.5
             }
         }
+    }
+    
+    private func simpleHapticFeedback() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
 }

@@ -57,12 +57,12 @@ struct FeelingView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .opacity(self.isFirstLayer ? 0 : 1)
-                        .animation(.easeIn(duration: 0.33))
+                        .animation(.linear(duration: 0.33))
                     imageFirstLayer
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .opacity(self.isFirstLayer ? 1 : 0)
-                        .animation(.easeIn(duration: 0.33))
+                        .animation(.linear(duration: 0.33))
                 }
                 .matchedGeometryEffect(id: "ImageAnimation", in: transitionNamespace)
 

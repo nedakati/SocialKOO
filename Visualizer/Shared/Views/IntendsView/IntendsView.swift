@@ -42,6 +42,14 @@ struct IntendsView: View {
                                 onSelectIntend(item)
                             }) {
                                 ZStack {
+                                    Text(item.text)
+                                        .font(.system(size: 21, weight: .bold))
+                                        .foregroundColor(Color.primary)
+                                        .frame(height: 104)
+                                        .frame(maxWidth: .infinity)
+                                        .background(Color("IntendColor"))
+                                        .cornerRadius(24)
+
                                     HStack {
                                         Image(item.imageName)
                                             .resizable()
@@ -51,14 +59,6 @@ struct IntendsView: View {
 
                                         Spacer()
                                     }
-
-                                    Text(item.text)
-                                        .font(.system(size: 21, weight: .bold))
-                                        .foregroundColor(Color.primary)
-                                        .frame(height: 104)
-                                        .frame(maxWidth: .infinity)
-                                        .background(Color(#colorLiteral(red: 0.8196078431, green: 0.8196078431, blue: 0.8196078431, alpha: 1)).opacity(0.3))
-                                        .cornerRadius(24)
                                 }
                             }
                             .padding(.bottom, 16)

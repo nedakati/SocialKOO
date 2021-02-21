@@ -92,13 +92,13 @@ struct MeditationView: View {
                                 .foregroundColor(.black)
                                 .fontWeight(.semibold)
                                 .font(.body)
+                                .frame(width: 120, height: 30)
+                                .background(Color.white.opacity(0.5))
+                                .cornerRadius(24)
                         }
-                        .frame(width: 120, height: 30)
-                        .background(Color.white.opacity(0.5))
-                        .cornerRadius(24)
                         .shadow(color: Color.black.opacity(0.16), radius: 16, x: 0, y: 16)
                     }
-                    .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
+                    .padding(EdgeInsets(top: 32, leading: 24, bottom: 24, trailing: 24))
                     Spacer()
                 }
             }

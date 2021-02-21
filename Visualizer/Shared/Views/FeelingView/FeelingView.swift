@@ -81,10 +81,10 @@ struct FeelingView: View {
             DragGesture()
                 .onEnded { value in
                     var newStateIndex = currentStateIndex
-                    if value.translation.height < 0 {
+                    if value.translation.height < -50 {
                         newStateIndex = min(currentStateIndex + 1, states.count - 1)
                     }
-                    if value.translation.height > 0 {
+                    if value.translation.height > 50 {
                         newStateIndex = max(currentStateIndex - 1, 0)
                     }
                     if newStateIndex != currentStateIndex {

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "mindDistraction.png",
+      "filename" : "distract.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "mindDistraction@2x.png",
+      "filename" : "distract@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "mindDistraction@3x.png",
+      "filename" : "distract@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

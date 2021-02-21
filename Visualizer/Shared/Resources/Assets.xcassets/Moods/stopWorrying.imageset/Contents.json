@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "stopWorrying@1x-1.png",
+      "filename" : "worry.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "stopWorrying.png",
+      "filename" : "worry@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "stopWorrying@3x.png",
+      "filename" : "worry@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

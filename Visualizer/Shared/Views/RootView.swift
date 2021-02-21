@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct RootView: View {
+    
     @State private var isMeditationViewVisible = false
+    @State private var showingDetail = false
     @State private var isFeelingViewVisible = false
     @State private var currentFeeling: Feeling = .neutral
 
@@ -16,8 +18,13 @@ struct RootView: View {
 
     var body: some View {
         if isMeditationViewVisible {
-            MeditationView(mood: .chillOut)
-                .transition(.opacity)
+            MeditationView(mood: .chillOut) {
+                showingDetail.toggle()
+            }
+            .sheet(isPresented: $showingDetail) {
+                ShareView(mood: .chillOut)
+            }
+            .transition(.opacity)
         } else if isFeelingViewVisible {
             IntendsView(feeling: $currentFeeling, transitionNamespace: animation, onSelectBack: {
                 withAnimation(.linear(duration: 0.33)) {

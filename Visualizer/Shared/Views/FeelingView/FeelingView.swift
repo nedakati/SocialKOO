@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FeelingView: View {
+
     @State private var currentStateIndex: Int
     private let states: [Feeling] = [.sob, .confused, .neutral, .grin, .star]
 
@@ -19,41 +20,33 @@ struct FeelingView: View {
     init(with feeling: Feeling, transitionNamespace: Namespace.ID, onSelectDone: ((Feeling) -> Void)?) {
         self.transitionNamespace = transitionNamespace
         self.onSelectDone = onSelectDone
-
         let stateIndex = states.firstIndex { $0 == feeling } ?? 2
         _currentStateIndex = State(initialValue: stateIndex)
-
         _gradientFirstLayer = State(initialValue: feeling.gradientColors)
         _gradientSecondLayer = State(initialValue: feeling.gradientColors)
-
         _imageFirstLayer = State(initialValue: Image(feeling.image))
         _imageSecondLayer = State(initialValue: Image(feeling.image))
     }
-
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: gradientSecondLayer), startPoint: .top, endPoint: .bottom)
                 .opacity(self.isFirstLayer ? 0 : 1)
                 .animation(.spring())
-
             LinearGradient(gradient: Gradient(colors: gradientFirstLayer), startPoint: .top, endPoint: .bottom)
                 .opacity(self.isFirstLayer ? 1 : 0)
                 .animation(.spring())
-
             VStack {
                 Spacer()
-
                 Text(Strings.howAreYouFeeling)
                     .font(.system(size: 34, weight: .bold))
                     .multilineTextAlignment(.center)
-
                 ZStack {
                     imageSecondLayer
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .opacity(self.isFirstLayer ? 0 : 1)
                         .animation(.easeIn(duration: 0.33))
-
                     imageFirstLayer
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -61,13 +54,10 @@ struct FeelingView: View {
                         .animation(.easeIn(duration: 0.33))
                 }
                 .matchedGeometryEffect(id: "ImageAnimation", in: transitionNamespace)
-
                 Text(Strings.swipeUpAndDown)
                     .font(.system(size: 16, weight: .medium))
                     .multilineTextAlignment(.center)
-
                 Spacer()
-
                 MainButton(title: Strings.done) {
                     onSelectDone?(states[currentStateIndex])
                 }
@@ -81,11 +71,9 @@ struct FeelingView: View {
                     if value.translation.height < 0 {
                         newStateIndex = min(currentStateIndex + 1, states.count - 1)
                     }
-
                     if value.translation.height > 0 {
                         newStateIndex = max(currentStateIndex - 1, 0)
                     }
-
                     if newStateIndex != currentStateIndex {
                         withAnimation(.linear(duration: 1)) {
                             currentStateIndex = newStateIndex
@@ -136,7 +124,6 @@ extension Feeling {
         case .star: return "Moods/star"
         }
     }
-
     var gradientColors: [Color] {
         switch self {
         case .sob: return [Color(#colorLiteral(red: 0.9959074855, green: 0.9962145686, blue: 0.9916471839, alpha: 1)), Color(#colorLiteral(red: 0.5951487422, green: 0.5375294685, blue: 0.437197268, alpha: 1))]

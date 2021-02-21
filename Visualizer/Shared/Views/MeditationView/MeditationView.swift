@@ -37,29 +37,7 @@ struct MeditationView: View {
         ZStack {
             GradientBackgroundView(colors: intend.gradients)
                 .ignoresSafeArea()
-            VStack(alignment: .center) {
-                HStack {
-                    if didStart {
-                        TimerView(time: $time, animation: intend) {
-                          updateSpeed()
-                        }
-                    }
-                    Spacer()
-                    Button(action: {
-                        onSelectDone?(time)
-                    }) {
-                        Text(Strings.imBetter)
-                            .foregroundColor(.black)
-                            .fontWeight(.semibold)
-                            .font(.body)
-                    }
-                    .frame(width: 120, height: 30)
-                    .background(Color.white.opacity(0.5))
-                    .cornerRadius(24)
-                    .shadow(color: Color.black.opacity(0.16), radius: 16, x: 0, y: 16)
-                }
-                .padding(EdgeInsets(top: 24, leading: 48, bottom: 24, trailing: 48))
-                Spacer()
+            ZStack {
                 ZStack {
                     ForEach((1 ..< intend.layers).reversed(), id: \.self) { number in
                         Polygon(width: CGFloat(intend.polygonBaseSize * number), height: CGFloat(intend.polygonBaseSize * number), speed: speed)
@@ -84,7 +62,7 @@ struct MeditationView: View {
                                 self.scalePolygon = 1
                             }
                         }
-                )
+                    )
                 .gesture(MagnificationGesture()
                     .onChanged { value in
                         withAnimation() {
@@ -97,9 +75,31 @@ struct MeditationView: View {
                         }
                     }
                 )
-                Spacer()
+                VStack {
+                    HStack {
+                        if didStart {
+                            TimerView(time: $time, animation: intend) {
+                                updateSpeed()
+                            }
+                        }
+                        Spacer()
+                        Button(action: {
+                            onSelectDone?(time)
+                        }) {
+                            Text(Strings.imBetter)
+                                .foregroundColor(.black)
+                                .fontWeight(.semibold)
+                                .font(.body)
+                        }
+                        .frame(width: 120, height: 30)
+                        .background(Color.white.opacity(0.5))
+                        .cornerRadius(24)
+                        .shadow(color: Color.black.opacity(0.16), radius: 16, x: 0, y: 16)
+                    }
+                    .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
+                    Spacer()
+                }
             }
-            .blur(radius: didStart ? 0 : 40)
             GradientBackgroundView(colors: [Color.white.opacity(0.3)])
                 .ignoresSafeArea()
                 .opacity(didStart ? 0 : 1)

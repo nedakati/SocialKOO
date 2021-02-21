@@ -10,3 +10,10 @@ import SwiftUI
 public extension Color {
     static let systemBackground = Color(UIColor.systemBackground)
 }
+
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+}

@@ -27,7 +27,7 @@ struct ResultView: View {
                     .font(.body)
                     .fontWeight(.regular)
                     .foregroundColor(.black)
-                Text(Strings.moodBoosting)
+                Text(intend.text.capitalizingFirstLetter())
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.black)

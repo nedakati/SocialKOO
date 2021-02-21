@@ -25,4 +25,5 @@ enum Strings {
     static let overview = "Overview"
     static let yourExperienceIsAboutToStart = "Your experience is about to start"
     static let imageSaved = "Image saved!"
+    static let howAreYouFeelingNow = "How are you \n feeling now?"
 }

@@ -11,7 +11,7 @@ struct RootView: View {
     
     @State private var isMeditationViewVisible = false
     @State private var isMeditationCompleted = false
-    @State private var reviewCompeted = false
+    @State private var reviewCompleted = false
     @State private var isFeelingViewVisible = false
     @State private var currentFeeling: Feeling = .neutral
     @State private var afterFeeling: Feeling = .neutral
@@ -37,10 +37,13 @@ struct RootView: View {
                 isMeditationViewVisible.toggle()
             })
         } else {
-            FeelingView(with: currentFeeling, transitionNamespace: animation, onSelectDone: { feeling in
+            FeelingView(with: isMeditationCompleted ? .neutral : currentFeeling,
+                        title: isMeditationCompleted ? Strings.howAreYouFeelingNow : Strings.howAreYouFeeling,
+                        transitionNamespace: animation,
+                        onSelectDone: { feeling in
                 if isMeditationCompleted {
                     afterFeeling = feeling
-                    reviewCompeted.toggle()
+                    reviewCompleted.toggle()
                 } else {
                     currentFeeling = feeling
                     withAnimation(.interpolatingSpring(stiffness: 100, damping: 13)) {
@@ -48,7 +51,7 @@ struct RootView: View {
                     }
                 }
             })
-            .sheet(isPresented: $reviewCompeted) {
+            .sheet(isPresented: $reviewCompleted) {
                 ShareView(intend: $currentIntend, fromFeeling: $currentFeeling, toFeeling: $afterFeeling)
             }
         }

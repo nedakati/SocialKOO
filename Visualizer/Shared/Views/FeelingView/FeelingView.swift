@@ -17,9 +17,13 @@ struct FeelingView: View {
     private let transitionNamespace: Namespace.ID
     private let onSelectDone: ((Feeling) -> Void)?
 
-    init(with feeling: Feeling, transitionNamespace: Namespace.ID, onSelectDone: ((Feeling) -> Void)?) {
+    @State private var titleText: String
+
+    init(with feeling: Feeling, title: String, transitionNamespace: Namespace.ID, onSelectDone: ((Feeling) -> Void)?) {
         self.transitionNamespace = transitionNamespace
         self.onSelectDone = onSelectDone
+
+        _titleText = State(initialValue: title)
         
         let stateIndex = states.firstIndex { $0 == feeling } ?? 2
         _currentStateIndex = State(initialValue: stateIndex)
@@ -43,7 +47,7 @@ struct FeelingView: View {
             VStack {
                 Spacer()
 
-                Text(Strings.howAreYouFeeling)
+                Text(titleText)
                     .font(.system(size: 34, weight: .bold))
                     .multilineTextAlignment(.center)
 

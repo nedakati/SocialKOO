@@ -96,6 +96,8 @@ struct FeelingView: View {
                             setImage(image: Image(states[currentStateIndex].image))
                         }
                     }
+                    
+                    simpleHapticFeedback()
                 }
         )
         .ignoresSafeArea(.all)
@@ -125,6 +127,13 @@ struct FeelingView: View {
         } else {
             imageSecondLayer = image
         }
+    }
+    
+    // MARK: - Haptic
+    
+    private func simpleHapticFeedback() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
 }
 

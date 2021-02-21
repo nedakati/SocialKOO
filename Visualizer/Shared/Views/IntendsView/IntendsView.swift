@@ -43,7 +43,8 @@ struct IntendsView: View {
                                         Image(item.imageName)
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .padding(16)
+                                            .frame(width: 48, height: 48)
+                                            .padding(.leading, 16)
 
                                         Spacer()
                                     }
@@ -57,7 +58,7 @@ struct IntendsView: View {
                             .frame(maxWidth: .infinity)
                             .background(Color(#colorLiteral(red: 0.8196078431, green: 0.8196078431, blue: 0.8196078431, alpha: 1)).opacity(0.3))
                             .cornerRadius(24)
-                            .padding(.bottom, 24)
+                            .padding(.bottom, 16)
                         }
                     }
                     .padding(.horizontal, 24)
@@ -90,10 +91,10 @@ struct IntendsView: View {
 private extension Intend {
     var imageName: String {
         switch self {
-        case .chillOut: return "Moods/confused"
-        case .moodBoost: return "Moods/grin"
-        case .stopWorrying: return "Moods/neutral"
-        case .mindDistraction: return "Moods/sob"
+        case .chillOut: return "Moods/chillOut"
+        case .moodBoost: return "Moods/moodBoost"
+        case .stopWorrying: return "Moods/stopWorrying"
+        case .mindDistraction: return "Moods/mindDistraction"
         }
     }
 

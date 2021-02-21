@@ -37,7 +37,7 @@ struct RootView: View {
                 isMeditationViewVisible.toggle()
             })
         } else {
-            FeelingView(with: isMeditationCompleted ? .neutral : currentFeeling,
+            FeelingView(with: currentFeeling,
                         title: isMeditationCompleted ? Strings.howAreYouFeelingNow : Strings.howAreYouFeeling,
                         transitionNamespace: animation,
                         onSelectDone: { feeling in

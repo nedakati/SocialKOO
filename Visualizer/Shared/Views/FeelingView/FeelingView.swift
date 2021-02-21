@@ -137,13 +137,35 @@ extension Feeling {
         case .star: return "Moods/star"
         }
     }
+
     var gradientColors: [Color] {
         switch self {
-        case .sob: return [Color(#colorLiteral(red: 0.9959074855, green: 0.9962145686, blue: 0.9916471839, alpha: 1)), Color(#colorLiteral(red: 0.5951487422, green: 0.5375294685, blue: 0.437197268, alpha: 1))]
-        case .confused: return [Color(#colorLiteral(red: 0.9959074855, green: 0.9962145686, blue: 0.9916471839, alpha: 1)), Color(#colorLiteral(red: 0.8427037597, green: 0.7486416698, blue: 0.5794628859, alpha: 1))]
-        case .neutral: return [Color(#colorLiteral(red: 0.9959074855, green: 0.9962145686, blue: 0.9916471839, alpha: 1)), Color(#colorLiteral(red: 0.877808094, green: 0.7393150926, blue: 0.511480689, alpha: 1))]
-        case .grin: return [Color(#colorLiteral(red: 0.9959074855, green: 0.9962145686, blue: 0.9916471839, alpha: 1)), Color(#colorLiteral(red: 0.9316776395, green: 0.715811193, blue: 0.5352671146, alpha: 1))]
-        case .star: return [Color(#colorLiteral(red: 0.9959074855, green: 0.9962145686, blue: 0.9916471839, alpha: 1)), Color(#colorLiteral(red: 0.9801376462, green: 0.6582708359, blue: 0.5666258931, alpha: 1))]
+        case .sob: return [Color("AccentColor"), Color(#colorLiteral(red: 0.5951487422, green: 0.5375294685, blue: 0.437197268, alpha: 1))]
+        case .confused: return [Color("AccentColor"), Color(#colorLiteral(red: 0.8427037597, green: 0.7486416698, blue: 0.5794628859, alpha: 1))]
+        case .neutral: return [Color("AccentColor"), Color(#colorLiteral(red: 0.877808094, green: 0.7393150926, blue: 0.511480689, alpha: 1))]
+        case .grin: return [Color("AccentColor"), Color(#colorLiteral(red: 0.9316776395, green: 0.715811193, blue: 0.5352671146, alpha: 1))]
+        case .star: return [Color("AccentColor"), Color(#colorLiteral(red: 0.9801376462, green: 0.6582708359, blue: 0.5666258931, alpha: 1))]
         }
+    }
+}
+
+// MARK: - Preview
+
+struct FeelingView_Previews: PreviewProvider {
+    private struct TestView: View {
+        @Namespace private var animation
+
+        var body: some View {
+            Group {
+                FeelingView(with: .confused, title: Strings.howAreYouFeeling, transitionNamespace: animation, onSelectDone: { _ in })
+
+                FeelingView(with: .confused, title: Strings.howAreYouFeeling, transitionNamespace: animation, onSelectDone: { _ in })
+                    .preferredColorScheme(.dark)
+            }
+        }
+    }
+
+    static var previews: some View {
+        TestView()
     }
 }

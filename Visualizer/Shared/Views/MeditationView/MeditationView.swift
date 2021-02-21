@@ -101,6 +101,7 @@ struct MeditationView: View {
                     Spacer()
                 }
             }
+            .blur(radius: didStart ? 0 : 10)
             GradientBackgroundView(colors: [Color.white.opacity(0.3)])
                 .ignoresSafeArea()
                 .opacity(didStart ? 0 : 1)

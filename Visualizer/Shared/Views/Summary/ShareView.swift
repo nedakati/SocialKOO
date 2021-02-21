@@ -51,6 +51,7 @@ struct ResultView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
+                    .padding(.bottom)
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity)

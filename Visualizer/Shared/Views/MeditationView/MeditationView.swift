@@ -114,11 +114,11 @@ struct MeditationView: View {
                 .animation(.easeIn)
         }
         .onAppear {
-            playSound()
             speed = 100
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 speed = intend.defaultSpeed
                 didStart = true
+                playSound()
             }
             let animation = Animation.easeInOut(duration: intend.defaultSpeed).repeatForever(autoreverses: true)
             withAnimation(animation) {
@@ -134,7 +134,7 @@ struct MeditationView: View {
     
     private func playSound() {
         audioPlayer?.play()
-        audioPlayer?.numberOfLoops = 3
+        audioPlayer?.numberOfLoops = 10
     }
     
     private func updateSpeed() {

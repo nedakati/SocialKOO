@@ -61,9 +61,8 @@ struct ShareView: View {
     
     var mood: MoodAnimation
     
-    @State var frame: CGRect = .zero
-    @State var geometry: GeometryProxy?
-    
+    @State private var geometry: GeometryProxy?
+    @State private var showAlert = false
     @State private var showShareSheet = false
     
     @Environment(\.presentationMode) private var presentationMode
@@ -103,10 +102,24 @@ struct ShareView: View {
                     MainButton(title: Strings.saveToPhotoGallery) {
                         if let geometry = geometry {
                             let screenshot = view.takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
-                            UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil)
+                            
+                            let imageSaver = ImageSaver()
+
+                            imageSaver.successHandler = {
+                                showAlert = true
+                            }
+
+                            imageSaver.errorHandler = {
+                                print("Oops: \($0.localizedDescription)")
+                            }
+
+                            imageSaver.writeToPhotoAlbum(image: screenshot)
                         }
                     }
-                    .padding(EdgeInsets(top: 0, leading: 24, bottom: 24, trailing: 24))
+                    .padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24))
+                    .alert(isPresented: $showAlert) { () -> Alert in
+                        Alert(title: Text(Strings.imageSaved), message: Text(""), dismissButton: .cancel())
+                    }
                 }
             }
             .navigationBarTitle(Strings.overview, displayMode: .inline)

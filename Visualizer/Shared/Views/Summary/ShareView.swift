@@ -75,13 +75,17 @@ struct ShareView: View {
     @Environment(\.presentationMode) private var presentationMode
 
     @State private var timeText: String = ""
-    
-    init(intend: Binding<Intend>, fromFeeling: Binding<Feeling>, toFeeling: Binding<Feeling>, time: Binding<Int>) {
+
+    var onDone: (() -> Void)?
+
+    init(intend: Binding<Intend>, fromFeeling: Binding<Feeling>, toFeeling: Binding<Feeling>, time: Binding<Int>, onDone: (() -> Void)?) {
         _intend = intend
         _fromFeeling = fromFeeling
         _toFeeling = toFeeling
         _time = time
-            
+
+        self.onDone = onDone
+
         UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
         UINavigationBar.appearance().barTintColor = .clear
@@ -109,22 +113,10 @@ struct ShareView: View {
                     .padding()
                     .shadow(color: Color.black.opacity(0.3), radius: 16, x: 0, y: 16)
                     Spacer()
-                    MainButton(title: Strings.saveToPhotoGallery) {
-                        if let geometry = geometry {
-                            let screenshot = ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling, timeText: $timeText).takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
-                            
-                            let imageSaver = ImageSaver()
 
-                            imageSaver.successHandler = {
-                                showAlert = true
-                            }
-
-                            imageSaver.errorHandler = {
-                                print("Oops: \($0.localizedDescription)")
-                            }
-
-                            imageSaver.writeToPhotoAlbum(image: screenshot)
-                        }
+                    MainButton(title: Strings.done) {
+                        self.onDone?()
+                        self.presentationMode.wrappedValue.dismiss()
                     }
                     .padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24))
                     .alert(isPresented: $showAlert) { () -> Alert in
@@ -148,6 +140,28 @@ struct ShareView: View {
                                         self.presentationMode.wrappedValue.dismiss()
                                     }) {
                                         Image(systemName: "xmark")
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 18, weight: .regular))
+                                    },
+                                trailing:
+                                    Button(action: {
+                                        if let geometry = geometry {
+                                            let screenshot = ResultView(intend: $intend, fromFeeling: $fromFeeling, toFeeling: $toFeeling, timeText: $timeText).takeScreenshot(origin: geometry.frame(in: .local).origin, size: geometry.size)
+
+                                            let imageSaver = ImageSaver()
+
+                                            imageSaver.successHandler = {
+                                                showAlert = true
+                                            }
+
+                                            imageSaver.errorHandler = {
+                                                print("Oops: \($0.localizedDescription)")
+                                            }
+
+                                            imageSaver.writeToPhotoAlbum(image: screenshot)
+                                        }
+                                    }) {
+                                        Image(systemName: "arrow.down.circle")
                                             .foregroundColor(.black)
                                             .font(.system(size: 18, weight: .regular))
                                     }

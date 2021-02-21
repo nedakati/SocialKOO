@@ -22,7 +22,6 @@ enum Strings {
     static let moodBoosting = "Mood boosting"
     static let iHaveTried = "I've tried"
     static let tryItYourself = "Try it yourself!"
-    static let saveToPhotoGallery = "Save to photo gallery"
     static let overview = "Overview"
     static let yourExperienceIsAboutToStart = "Your experience is about to start"
     static let imageSaved = "Image saved!"

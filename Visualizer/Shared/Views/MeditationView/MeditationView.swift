@@ -23,9 +23,8 @@ struct MeditationView: View {
     
     init(intend: Intend, onSelectDone: ((Int) -> Void)?) {
         self.intend = intend
-        print("debug: intend \(intend)")
         self.onSelectDone = onSelectDone
-        if let path = Bundle.main.path(forResource: "music_zapsplat_among_the_stars", ofType: "mp3") {
+        if let path = Bundle.main.path(forResource: intend.songTitle, ofType: intend.songType) {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
             } catch {

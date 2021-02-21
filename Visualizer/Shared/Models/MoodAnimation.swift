@@ -71,6 +71,24 @@ extension Intend {
         case .mindDistraction: return 10
         }
     }
+    
+    var songTitle: String {
+        switch self {
+        case .chillOut: return "music_zapsplat_among_the_stars"
+        case .moodBoost: return "music_zapsplat_among_the_stars"
+        case .stopWorrying: return "music_zapsplat_among_the_stars"
+        case .mindDistraction: return "music_zapsplat_among_the_stars"
+        }
+    }
+    
+    var songType: String {
+        switch self {
+        case .chillOut: return "mp3"
+        case .moodBoost: return "mp3"
+        case .stopWorrying: return "mp3"
+        case .mindDistraction: return "mp3"
+        }
+    }
 }
 
 extension Color {

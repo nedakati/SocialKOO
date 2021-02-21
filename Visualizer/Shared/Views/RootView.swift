@@ -10,7 +10,7 @@ import SwiftUI
 struct RootView: View {
     
     @State private var isMeditationViewVisible = false
-    @State private var isMeditationCompleted = false
+    @State private var isReviewViewVisible = false
     @State private var reviewCompleted = false
     @State private var isFeelingViewVisible = false
     @State private var currentFeeling: Feeling = .neutral
@@ -25,11 +25,10 @@ struct RootView: View {
         if isMeditationViewVisible {
             MeditationView(intend: currentIntend) { time in
                 self.time = time
-                print(time)
         
                 isFeelingViewVisible.toggle()
                 isMeditationViewVisible.toggle()
-                isMeditationCompleted.toggle()
+                isReviewViewVisible.toggle()
             }
             .transition(.opacity)
         } else if isFeelingViewVisible {
@@ -41,25 +40,40 @@ struct RootView: View {
                 currentIntend = intend
                 isMeditationViewVisible.toggle()
             })
-        } else {
+        } else if isReviewViewVisible {
             FeelingView(with: currentFeeling,
-                        title: isMeditationCompleted ? Strings.howAreYouFeelingNow : Strings.howAreYouFeeling,
+                        title: Strings.howAreYouFeelingNow,
                         transitionNamespace: animation,
                         onSelectDone: { feeling in
-                if isMeditationCompleted {
-                    afterFeeling = feeling
-                    reviewCompleted.toggle()
-                } else {
-                    currentFeeling = feeling
-                    withAnimation(.interpolatingSpring(stiffness: 100, damping: 13)) {
-                        isFeelingViewVisible.toggle()
-                    }
+                            afterFeeling = feeling
+                            reviewCompleted.toggle()
+                        })
+                .sheet(isPresented: $reviewCompleted) {
+                    ShareView(intend: $currentIntend, fromFeeling: $currentFeeling, toFeeling: $afterFeeling, time: $time, onDone: {
+                        reset()
+                    })
                 }
-            })
-            .sheet(isPresented: $reviewCompleted) {
-                ShareView(intend: $currentIntend, fromFeeling: $currentFeeling, toFeeling: $afterFeeling, time: $time)
-            }
+        } else {
+            FeelingView(with: currentFeeling,
+                        title: Strings.howAreYouFeeling,
+                        transitionNamespace: animation,
+                        onSelectDone: { feeling in
+                            currentFeeling = feeling
+                            withAnimation(.interpolatingSpring(stiffness: 100, damping: 13)) {
+                                isFeelingViewVisible.toggle()
+                            }
+                        })
         }
+    }
+
+    private func reset() {
+        isReviewViewVisible = false
+        isMeditationViewVisible = false
+        reviewCompleted = false
+        isFeelingViewVisible = false
+        currentFeeling = .neutral
+        afterFeeling = .neutral
+        currentIntend = .chillOut
     }
 }
 

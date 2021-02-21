@@ -61,9 +61,7 @@ struct ShareView: View {
     
     var mood: MoodAnimation
     
-    @State var frame: CGRect = .zero
-    @State var geometry: GeometryProxy?
-    
+    @State private var geometry: GeometryProxy?
     @State private var showShareSheet = false
     
     @Environment(\.presentationMode) private var presentationMode
